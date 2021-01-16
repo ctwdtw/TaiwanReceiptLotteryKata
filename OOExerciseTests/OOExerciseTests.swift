@@ -10,24 +10,134 @@ import XCTest
 
 class OOExerciseTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testRenderB2BReceipt() {
+        //
+        let b2bReceipt = B2BReceipt(
+            lotteryNumber: fixedLotteryNumber(),
+            date: anyDate(),
+            price: 100,
+            taxID: anyTaxID(),
+            companyName: anyCompanyName()
+        )
+        
+        let sut = ReceiptViewController(receipt: b2bReceipt)
+        
+        //
+        sut.loadViewIfNeeded()
+        
+        //
+        assertThat(
+            sut,
+            renderReceiptTypeText: "B2B receipt has been issued",
+            lotteryNumberText: fixedLotteryNumber(),
+            receiptStatusText: "choose to print out or send through email"
+        )
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testRenderCachedReceipt() {
+        //
+        let cachedReceipt = CachedReceipt(
+            lotteryNumber: fixedLotteryNumber(),
+            date: anyDate(),
+            price: 100,
+            deviceID: anyDeviceID()
+        )
+        
+        let sut = ReceiptViewController(receipt: cachedReceipt)
+        
+        //
+        sut.loadViewIfNeeded()
+        
+        //
+        assertThat(
+            sut,
+            renderReceiptTypeText: "B2C receipt has been issued",
+            lotteryNumberText: fixedLotteryNumber(),
+            receiptStatusText: "receipt is saved in device with device id: \(cachedReceipt.deviceID)"
+        )
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testRenderDonatedReceipt() {
+        //
+        let donatedReceipt = NonprofitOrgReceipt(
+            lotteryNumber: fixedLotteryNumber(),
+            date: anyDate(),
+            price: 100,
+            organizationID: anyNonprofitOrgID()
+        )
+        
+        let sut = ReceiptViewController(receipt: donatedReceipt)
+        
+        //
+        sut.loadViewIfNeeded()
+        
+        //
+        assertThat(
+            sut,
+            renderReceiptTypeText: "B2C receipt has been issued",
+            lotteryNumberText: fixedLotteryNumber(),
+            receiptStatusText: "receipt lottery opportunity has been donated to non profile organization, org id: \(donatedReceipt.organizationID)"
+        )
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testRenderCommonB2CReceipt() {
+        //
+        let commonB2CReceipt = Receipt(
+            lotteryNumber: fixedLotteryNumber(),
+            date: anyDate(),
+            price: 100
+        )
+        
+        let sut = ReceiptViewController(receipt: commonB2CReceipt)
+        
+        //
+        sut.loadViewIfNeeded()
+        
+        //
+        assertThat(
+            sut,
+            renderReceiptTypeText: "B2C receipt has been issued",
+            lotteryNumberText: fixedLotteryNumber(),
+            receiptStatusText: "receipt has been printed"
+        )
+    }
+    
+    //MARK: - helpers
+    private func fixedLotteryNumber() -> String {
+        return "AA12345678"
+    }
+    
+    private func anyDate() -> Date {
+        return Date()
+    }
+    
+    private func anyTaxID() -> String {
+        return "anyTaxID"
+    }
+    
+    private func anyCompanyName() -> String {
+        return "anyCompanyName"
+    }
+    
+    private func anyDeviceID() -> String {
+        return "anyDeviceID"
+    }
+    
+    private func anyNonprofitOrgID() -> String {
+        return "anyNonprofitOrgID"
+    }
+    
+    private func assertThat(
+        _ sut: ReceiptViewController,
+        renderReceiptTypeText receiptTypeText: String,
+        lotteryNumberText: String,
+        receiptStatusText: String,
+        file: StaticString = #file,
+        line: UInt = #line
+    ) {
+        XCTAssertEqual(sut.receiptTypeLabel.text, receiptTypeText, file: file, line: line)
+        XCTAssertEqual(sut.lotteryNumberLabel.text, lotteryNumberText, file: file, line: line)
+        XCTAssertEqual(sut.receiptStatusLabel.text, receiptStatusText, file: file, line: line)
     }
 
 }
