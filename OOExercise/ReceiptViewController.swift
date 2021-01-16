@@ -9,11 +9,11 @@ import UIKit
 
 public class ReceiptViewController: UIViewController {
 
-    private var receipt: ReceiptPresentable!
+    private var receiptViewModel: ReceiptPresentable!
     
-    public convenience init(receipt: ReceiptPresentable) {
+    public convenience init(viewModel: ReceiptPresentable) {
         self.init()
-        self.receipt = receipt
+        self.receiptViewModel = viewModel
     }
     
     public lazy var receiptTypeLabel: UILabel = {
@@ -49,9 +49,9 @@ public class ReceiptViewController: UIViewController {
     }
     
     private func displayReceipt() {
-        receiptTypeLabel.text = receipt.presentReceiptType()
-        lotteryNumberLabel.text = receipt.presentReceiptLotteryNumber()
-        receiptStatusLabel.text = receipt.presentReceiptStatus()
+        receiptTypeLabel.text = receiptViewModel.presentReceiptType()
+        lotteryNumberLabel.text = receiptViewModel.presentReceiptLotteryNumber()
+        receiptStatusLabel.text = receiptViewModel.presentReceiptStatus()
     }
 }
 
