@@ -7,6 +7,7 @@
 
 import Foundation
 public protocol ReceiptPresentable {
+    var receipt: Receipt { get }
     func presentReceiptType() -> String
     func presentReceiptLotteryNumber() -> String
     func presentReceiptStatus() -> String
@@ -16,17 +17,17 @@ extension ReceiptPresentable {
     public func presentReceiptType() -> String {
         return "B2C receipt has been issued"
     }
-}
-
-public struct CommonB2CReceiptViewModel: ReceiptPresentable {
-    private let receipt: CommonB2CReceipt
-    
-    public init(receipt: CommonB2CReceipt) {
-        self.receipt = receipt
-    }
     
     public func presentReceiptLotteryNumber() -> String {
         return receipt.commonFields.lotteryNumber
+    }
+}
+
+public struct CommonB2CReceiptViewModel: ReceiptPresentable {
+    public let receipt: Receipt
+    
+    public init(receipt: CommonB2CReceipt) {
+        self.receipt = receipt
     }
     
     public func presentReceiptStatus() -> String {
@@ -35,46 +36,36 @@ public struct CommonB2CReceiptViewModel: ReceiptPresentable {
 }
 
 public struct NonprofitOrgReceiptViewModel: ReceiptPresentable {
-    private let receipt: NonprofitOrgReceipt
+    public let receipt: Receipt
     
     public init(receipt: NonprofitOrgReceipt) {
         self.receipt = receipt
     }
     
-    public func presentReceiptLotteryNumber() -> String {
-        return receipt.commonFields.lotteryNumber
-    }
-    
     public func presentReceiptStatus() -> String {
-        return "receipt lottery opportunity has been donated to non profile organization, org id: \(receipt.organizationID)"
+        let r = receipt as! NonprofitOrgReceipt
+        return "receipt lottery opportunity has been donated to non profile organization, org id: \(r.organizationID)"
     }
 }
 
 public struct CachedReceiptViewModel: ReceiptPresentable {
-    private let receipt: CachedReceipt
+    public let receipt: Receipt
     
     public init(receipt: CachedReceipt) {
         self.receipt = receipt
     }
     
-    public func presentReceiptLotteryNumber() -> String {
-        return receipt.commonFields.lotteryNumber
-    }
-    
     public func presentReceiptStatus() -> String {
-        return "receipt is saved in device with device id: \(receipt.deviceID)"
+        let r = receipt as! CachedReceipt
+        return "receipt is saved in device with device id: \(r.deviceID)"
     }
 }
 
 public struct B2BReceiptViewModel: ReceiptPresentable {
-    private let receipt: B2BReceipt
+    public let receipt: Receipt
     
     public init(receipt: B2BReceipt) {
         self.receipt = receipt
-    }
-    
-    public func presentReceiptLotteryNumber() -> String {
-        return receipt.commonFields.lotteryNumber
     }
     
     public func presentReceiptType() -> String {
