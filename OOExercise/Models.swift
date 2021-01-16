@@ -33,8 +33,15 @@
 
 import Foundation
 
-// this is the a receipt with essential receipt fields, which is also a b2c receipt
-public class Receipt {
+public protocol ReceiptPresentable {
+    func presentReceiptType() -> String
+    func presentReceiptLotteryNumber() -> String
+    func presentReceiptStatus() -> String
+}
+
+
+// common fields for all kinds of receipts
+public struct ReceiptCommonFields {
     let lotteryNumber: String
     private let date: Date
     private let price: Int
@@ -44,60 +51,96 @@ public class Receipt {
         self.date = date
         self.price = price
     }
+}
+
+// this is the a receipt with essential receipt fields, which is also a b2c receipt
+public struct CommonB2CReceipt: ReceiptPresentable {
+    private let commonFields: ReceiptCommonFields
     
-    func presentReceiptType() -> String {
+    public init(lotteryNumber: String, date: Date, price: Int) {
+        self.commonFields = ReceiptCommonFields(lotteryNumber: lotteryNumber, date: date, price: price)
+    }
+    
+    public func presentReceiptLotteryNumber() -> String {
+        return commonFields.lotteryNumber
+    }
+    
+    public func presentReceiptType() -> String {
         return "B2C receipt has been issued"
     }
     
-    func presentReceiptStatus() -> String {
+    public func presentReceiptStatus() -> String {
         return "receipt has been printed"
     }
 }
 
 // this is b2b receipt
-public class B2BReceipt: Receipt {
+public struct B2BReceipt: ReceiptPresentable {
     private let taxID: String
     private let companyName: String
+    private let commonFields: ReceiptCommonFields
     
     public init(lotteryNumber: String, date: Date, price: Int, taxID: String, companyName: String) {
         self.taxID = taxID
         self.companyName = companyName
-        super.init(lotteryNumber: lotteryNumber, date: date, price: price)
+        self.commonFields = ReceiptCommonFields(lotteryNumber: lotteryNumber, date: date, price: price)
     }
     
-    override func presentReceiptType() -> String {
+    public func presentReceiptType() -> String {
         return "B2B receipt has been issued"
     }
     
-    override func presentReceiptStatus() -> String {
+    public func presentReceiptLotteryNumber() -> String {
+        return commonFields.lotteryNumber
+    }
+    
+    public func presentReceiptStatus() -> String {
         return "choose to print out or send through email"
     }
 }
 
 // this is a b2c receipt
-public class CachedReceipt: Receipt {
+public struct CachedReceipt: ReceiptPresentable {
     private let deviceID: String
+    private let commonFields: ReceiptCommonFields
     
     public init(lotteryNumber: String, date: Date, price: Int, deviceID: String) {
         self.deviceID = deviceID
-        super.init(lotteryNumber: lotteryNumber, date: date, price: price)
+        self.commonFields = ReceiptCommonFields(lotteryNumber: lotteryNumber, date: date, price: price)
     }
     
-    override func presentReceiptStatus() -> String {
+    public func presentReceiptType() -> String {
+        return "B2C receipt has been issued"
+    }
+    
+    public func presentReceiptLotteryNumber() -> String {
+        return commonFields.lotteryNumber
+    }
+    
+    public func presentReceiptStatus() -> String {
         return "receipt is saved in device with device id: \(deviceID)"
     }
 }
 
 // this is a b2c receipt
-public class NonprofitOrgReceipt: Receipt {
+public struct NonprofitOrgReceipt: ReceiptPresentable {
     private let organizationID: String
+    private let commonFields: ReceiptCommonFields
     
     public init(lotteryNumber: String, date: Date, price: Int, organizationID: String) {
         self.organizationID = organizationID
-        super.init(lotteryNumber: lotteryNumber, date: date, price: price)
+        self.commonFields = ReceiptCommonFields(lotteryNumber: lotteryNumber, date: date, price: price)
     }
     
-    override func presentReceiptStatus() -> String {
+    public func presentReceiptType() -> String {
+        return "B2C receipt has been issued"
+    }
+    
+    public func presentReceiptLotteryNumber() -> String {
+        return commonFields.lotteryNumber
+    }
+    
+    public func presentReceiptStatus() -> String {
         return "receipt lottery opportunity has been donated to non profile organization, org id: \(organizationID)"
     }
 }

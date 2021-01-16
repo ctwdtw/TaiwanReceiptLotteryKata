@@ -9,9 +9,9 @@ import UIKit
 
 public class ReceiptViewController: UIViewController {
 
-    private var receipt: Receipt!
+    private var receipt: ReceiptPresentable!
     
-    public convenience init(receipt: Receipt) {
+    public convenience init(receipt: ReceiptPresentable) {
         self.init()
         self.receipt = receipt
     }
@@ -50,7 +50,7 @@ public class ReceiptViewController: UIViewController {
     
     private func displayReceipt() {
         receiptTypeLabel.text = receipt.presentReceiptType()
-        lotteryNumberLabel.text = receipt.lotteryNumber
+        lotteryNumberLabel.text = receipt.presentReceiptLotteryNumber()
         receiptStatusLabel.text = receipt.presentReceiptStatus()
     }
 }

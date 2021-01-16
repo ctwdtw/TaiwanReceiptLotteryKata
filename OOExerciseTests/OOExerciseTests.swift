@@ -82,7 +82,7 @@ class OOExerciseTests: XCTestCase {
     
     func testRenderCommonB2CReceipt() {
         //
-        let commonB2CReceipt = Receipt(
+        let commonB2CReceipt = CommonB2CReceipt(
             lotteryNumber: fixedLotteryNumber(),
             date: anyDate(),
             price: 100
