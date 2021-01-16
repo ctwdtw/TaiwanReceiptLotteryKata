@@ -21,6 +21,10 @@ extension ReceiptPresentable {
     public func presentReceiptLotteryNumber() -> String {
         return receipt.commonFields.lotteryNumber
     }
+    
+    public func presentReceiptStatus() -> String {
+        return "receipt has been printed"
+    }
 }
 
 public struct CommonB2CReceiptViewModel: ReceiptPresentable {
@@ -28,10 +32,6 @@ public struct CommonB2CReceiptViewModel: ReceiptPresentable {
     
     public init(receipt: CommonB2CReceipt) {
         self.receipt = receipt
-    }
-    
-    public func presentReceiptStatus() -> String {
-        return "receipt has been printed"
     }
 }
 
