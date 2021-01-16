@@ -42,6 +42,14 @@ class Receipt {
         self.date = date
         self.price = price
     }
+    
+    func presentReceiptType() -> String {
+        return "B2C receipt has been issued"
+    }
+    
+    func presentReceiptStatus() -> String {
+        return "receipt has been printed"
+    }
 }
 
 class B2BReceipt: Receipt {
@@ -52,6 +60,14 @@ class B2BReceipt: Receipt {
         self.taxID = taxID
         self.companyName = companyName
         super.init(lotteryNumber: lotteryNumber, date: date, price: price)
+    }
+    
+    override func presentReceiptType() -> String {
+        return "B2B receipt has been issued"
+    }
+    
+    override func presentReceiptStatus() -> String {
+        return "choose to print out or send through email"
     }
 }
 
@@ -64,6 +80,9 @@ class CachedReceipt: Receipt {
         super.init(lotteryNumber: lotteryNumber, date: date, price: price)
     }
     
+    override func presentReceiptStatus() -> String {
+        return "receipt is saved in device with device id: \(deviceID)"
+    }
 }
 
 // this is a b2c receipt
@@ -73,6 +92,10 @@ class NonprofitOrgReceipt: Receipt {
     init(lotteryNumber: String, date: Date, price: Int, organizationID: String) {
         self.organizationID = organizationID
         super.init(lotteryNumber: lotteryNumber, date: date, price: price)
+    }
+    
+    override func presentReceiptStatus() -> String {
+        return "receipt lottery opportunity has been donated to non profile organization, org id: \(organizationID)"
     }
     
 }

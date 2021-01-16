@@ -49,28 +49,9 @@ class ReceiptViewController: UIViewController {
     }
     
     func displayReceipt() {
-        if let r = receipt as? B2BReceipt {
-            receiptTypeLabel.text = "B2B receipt has been issued"
-            lotteryNumberLabel.text = r.lotteryNumber
-            receiptStatusLabel.text = "choose to print out or send through email"
-
-        } else if let r = receipt as? CachedReceipt {
-            receiptTypeLabel.text = "B2C receipt has been issued"
-            lotteryNumberLabel.text = r.lotteryNumber
-            receiptStatusLabel.text = "receipt is saved in device with device id: \(r.deviceID)"
-
-        } else if let r = receipt as? NonprofitOrgReceipt {
-            receiptTypeLabel.text = "B2C receipt has been issued"
-            lotteryNumberLabel.text = r.lotteryNumber
-            receiptStatusLabel.text = "receipt lottery opportunity has been donated to non profile organization, org id: \(r.organizationID)"
-
-        } else {
-            receiptTypeLabel.text = "B2C receipt has been issued"
-            lotteryNumberLabel.text = receipt.lotteryNumber
-            receiptStatusLabel.text = "receipt has been printed"
-            
-        }
-
+        receiptTypeLabel.text = receipt.presentReceiptType()
+        lotteryNumberLabel.text = receipt.lotteryNumber
+        receiptStatusLabel.text = receipt.presentReceiptStatus()
     }
 }
 
