@@ -12,15 +12,17 @@ public protocol ReceiptPresentable {
     func presentReceiptStatus() -> String
 }
 
+extension ReceiptPresentable {
+    public func presentReceiptType() -> String {
+        return "B2C receipt has been issued"
+    }
+}
+
 public struct CommonB2CReceiptViewModel: ReceiptPresentable {
     private let receipt: CommonB2CReceipt
     
     public init(receipt: CommonB2CReceipt) {
         self.receipt = receipt
-    }
-    
-    public func presentReceiptType() -> String {
-        return "B2C receipt has been issued"
     }
     
     public func presentReceiptLotteryNumber() -> String {
@@ -39,10 +41,6 @@ public struct NonprofitOrgReceiptViewModel: ReceiptPresentable {
         self.receipt = receipt
     }
     
-    public func presentReceiptType() -> String {
-        return "B2C receipt has been issued"
-    }
-    
     public func presentReceiptLotteryNumber() -> String {
         return receipt.commonFields.lotteryNumber
     }
@@ -57,10 +55,6 @@ public struct CachedReceiptViewModel: ReceiptPresentable {
     
     public init(receipt: CachedReceipt) {
         self.receipt = receipt
-    }
-    
-    public func presentReceiptType() -> String {
-        return "B2C receipt has been issued"
     }
     
     public func presentReceiptLotteryNumber() -> String {
