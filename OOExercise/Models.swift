@@ -32,12 +32,14 @@
  */
 
 import Foundation
-class Receipt {
+
+// this is the a receipt with essential receipt fields, which is also a b2c receipt
+public class Receipt {
     let lotteryNumber: String
-    let date: Date
-    let price: Int
+    private let date: Date
+    private let price: Int
     
-    init(lotteryNumber: String, date: Date, price: Int) {
+    public init(lotteryNumber: String, date: Date, price: Int) {
         self.lotteryNumber = lotteryNumber
         self.date = date
         self.price = price
@@ -52,11 +54,12 @@ class Receipt {
     }
 }
 
-class B2BReceipt: Receipt {
-    let taxID: String
-    let companyName: String
+// this is b2b receipt
+public class B2BReceipt: Receipt {
+    private let taxID: String
+    private let companyName: String
     
-    init(lotteryNumber: String, date: Date, price: Int, taxID: String, companyName: String) {
+    public init(lotteryNumber: String, date: Date, price: Int, taxID: String, companyName: String) {
         self.taxID = taxID
         self.companyName = companyName
         super.init(lotteryNumber: lotteryNumber, date: date, price: price)
@@ -72,10 +75,10 @@ class B2BReceipt: Receipt {
 }
 
 // this is a b2c receipt
-class CachedReceipt: Receipt {
-    let deviceID: String
+public class CachedReceipt: Receipt {
+    private let deviceID: String
     
-    init(lotteryNumber: String, date: Date, price: Int, deviceID: String) {
+    public init(lotteryNumber: String, date: Date, price: Int, deviceID: String) {
         self.deviceID = deviceID
         super.init(lotteryNumber: lotteryNumber, date: date, price: price)
     }
@@ -86,10 +89,10 @@ class CachedReceipt: Receipt {
 }
 
 // this is a b2c receipt
-class NonprofitOrgReceipt: Receipt {
-    let organizationID: String
+public class NonprofitOrgReceipt: Receipt {
+    private let organizationID: String
     
-    init(lotteryNumber: String, date: Date, price: Int, organizationID: String) {
+    public init(lotteryNumber: String, date: Date, price: Int, organizationID: String) {
         self.organizationID = organizationID
         super.init(lotteryNumber: lotteryNumber, date: date, price: price)
     }
@@ -97,5 +100,4 @@ class NonprofitOrgReceipt: Receipt {
     override func presentReceiptStatus() -> String {
         return "receipt lottery opportunity has been donated to non profile organization, org id: \(organizationID)"
     }
-    
 }

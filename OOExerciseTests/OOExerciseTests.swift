@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import OOExercise
+import OOExercise
 
 class OOExerciseTests: XCTestCase {
 
@@ -53,7 +53,7 @@ class OOExerciseTests: XCTestCase {
             sut,
             renderReceiptTypeText: "B2C receipt has been issued",
             lotteryNumberText: fixedLotteryNumber(),
-            receiptStatusText: "receipt is saved in device with device id: \(cachedReceipt.deviceID)"
+            receiptStatusText: "receipt is saved in device with device id: \(anyDeviceID())"
         )
     }
     
@@ -76,7 +76,7 @@ class OOExerciseTests: XCTestCase {
             sut,
             renderReceiptTypeText: "B2C receipt has been issued",
             lotteryNumberText: fixedLotteryNumber(),
-            receiptStatusText: "receipt lottery opportunity has been donated to non profile organization, org id: \(donatedReceipt.organizationID)"
+            receiptStatusText: "receipt lottery opportunity has been donated to non profile organization, org id: \(anyNonprofitOrgID())"
         )
     }
     

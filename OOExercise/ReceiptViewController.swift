@@ -7,16 +7,16 @@
 
 import UIKit
 
-class ReceiptViewController: UIViewController {
+public class ReceiptViewController: UIViewController {
 
     private var receipt: Receipt!
     
-    convenience init(receipt: Receipt) {
+    public convenience init(receipt: Receipt) {
         self.init()
         self.receipt = receipt
     }
     
-    lazy var receiptTypeLabel: UILabel = {
+    public lazy var receiptTypeLabel: UILabel = {
         let label = UILabel()
         //
         // .. layout code goes here
@@ -24,7 +24,7 @@ class ReceiptViewController: UIViewController {
         return label
     }()
     
-    lazy var lotteryNumberLabel: UILabel = {
+    public lazy var lotteryNumberLabel: UILabel = {
         let label = UILabel()
         //
         // .. layout code goes here
@@ -32,7 +32,7 @@ class ReceiptViewController: UIViewController {
         return label
     }()
     
-    lazy var receiptStatusLabel: UILabel = {
+    public lazy var receiptStatusLabel: UILabel = {
         let label = UILabel()
         //
         // .. layout code goes here
@@ -40,7 +40,7 @@ class ReceiptViewController: UIViewController {
         return label
     }()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         _ = receiptTypeLabel
         _ = lotteryNumberLabel
@@ -48,7 +48,7 @@ class ReceiptViewController: UIViewController {
         displayReceipt()
     }
     
-    func displayReceipt() {
+    private func displayReceipt() {
         receiptTypeLabel.text = receipt.presentReceiptType()
         lotteryNumberLabel.text = receipt.lotteryNumber
         receiptStatusLabel.text = receipt.presentReceiptStatus()
