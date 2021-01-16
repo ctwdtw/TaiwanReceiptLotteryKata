@@ -36,28 +36,34 @@ public struct CommonB2CReceiptViewModel: ReceiptPresentable {
 }
 
 public struct NonprofitOrgReceiptViewModel: ReceiptPresentable {
-    public let receipt: Receipt
+    public var receipt: Receipt {
+        return _receipt
+    }
+    
+    private let _receipt: NonprofitOrgReceipt
     
     public init(receipt: NonprofitOrgReceipt) {
-        self.receipt = receipt
+        self._receipt = receipt
     }
     
     public func presentReceiptStatus() -> String {
-        let r = receipt as! NonprofitOrgReceipt
-        return "receipt lottery opportunity has been donated to non profile organization, org id: \(r.organizationID)"
+        return "receipt lottery opportunity has been donated to non profile organization, org id: \(_receipt.organizationID)"
     }
 }
 
 public struct CachedReceiptViewModel: ReceiptPresentable {
-    public let receipt: Receipt
+    public var receipt: Receipt {
+        return _receipt
+    }
+    
+    private let _receipt: CachedReceipt
     
     public init(receipt: CachedReceipt) {
-        self.receipt = receipt
+        self._receipt = receipt
     }
     
     public func presentReceiptStatus() -> String {
-        let r = receipt as! CachedReceipt
-        return "receipt is saved in device with device id: \(r.deviceID)"
+        return "receipt is saved in device with device id: \(_receipt.deviceID)"
     }
 }
 
