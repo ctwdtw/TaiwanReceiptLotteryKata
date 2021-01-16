@@ -20,7 +20,7 @@ class OOExerciseTests: XCTestCase {
             companyName: anyCompanyName()
         )
         
-        let viewModel = ReceiptViewModel(receipt: b2bReceipt)
+        let viewModel = B2BReceiptViewModel(receipt: b2bReceipt)
         
         let sut = ReceiptViewController(viewModel: viewModel)
         
@@ -45,7 +45,7 @@ class OOExerciseTests: XCTestCase {
             deviceID: anyDeviceID()
         )
         
-        let viewModel = ReceiptViewModel(receipt: cachedReceipt)
+        let viewModel = CachedReceiptViewModel(receipt: cachedReceipt)
         
         let sut = ReceiptViewController(viewModel: viewModel)
         
@@ -70,7 +70,7 @@ class OOExerciseTests: XCTestCase {
             organizationID: anyNonprofitOrgID()
         )
         
-        let viewModel = ReceiptViewModel(receipt: donatedReceipt)
+        let viewModel = NonprofitOrgReceiptViewModel(receipt: donatedReceipt)
         
         let sut = ReceiptViewController(viewModel: viewModel)
         
@@ -94,7 +94,7 @@ class OOExerciseTests: XCTestCase {
             price: 100
         )
         
-        let viewModel = ReceiptViewModel(receipt: commonB2CReceipt)
+        let viewModel = CommonB2CReceiptViewModel(receipt: commonB2CReceipt)
         
         let sut = ReceiptViewController(viewModel: viewModel)
         
