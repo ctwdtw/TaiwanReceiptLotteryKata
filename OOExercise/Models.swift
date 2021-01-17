@@ -4,33 +4,6 @@
 //
 //  Created by Paul Lee on 2021/1/16.
 //
-
-/*
- In Taiwan, in order to prevent tax evasion, the government ask big merchant to give
- a receipt with a government assigned number to the consumer when a transaction is done.
-
- If merchants honestly give consumers receipts with government assigned numbers,
- the government can track supposed tax amount with those numbers
- 
- In order to encourage consumers to ask receipts from merchants,
- the government turn the assigned number to the so called Taiwan Receipt Lottery Number.
- 
- Here is a simplified version for the actual requirements for the receipt:
- 
- Each receipt has the following fields:
- 1. date
- 2. price
- 3. lottery number
- 
- , and some extras based on the type of the receipt:
- 
- b2b receipt can be sent through email or print out.
- b2c receipt can be print out or cached in a device with device id.
- b2c receipt can be denote to nonprofit organization for the Taiwan Receipt Lottery opportunity.
- 
- This project is an exercise of using OOP to model such requirement.
- */
-
 import Foundation
 
 public protocol Receipt {

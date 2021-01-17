@@ -16,6 +16,7 @@
 		63E8F33F25B293DA00468177 /* OOExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F33E25B293DA00468177 /* OOExerciseTests.swift */; };
 		63E8F35B25B294DA00468177 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F35A25B294DA00468177 /* Models.swift */; };
 		63E8F38325B3151B00468177 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F38225B3151B00468177 /* ViewModels.swift */; };
+		63E8F39425B446CD00468177 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 63E8F39325B446CD00468177 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		63E8F34525B293DA00468177 /* OOExerciseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OOExerciseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E8F35A25B294DA00468177 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		63E8F38225B3151B00468177 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
+		63E8F39325B446CD00468177 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		63E8F32625B293D800468177 /* OOExercise */ = {
 			isa = PBXGroup;
 			children = (
+				63E8F39325B446CD00468177 /* README.md */,
 				63E8F32725B293D800468177 /* AppDelegate.swift */,
 				63E8F32925B293D800468177 /* SceneDelegate.swift */,
 				63E8F32B25B293D800468177 /* ReceiptViewController.swift */,
@@ -226,6 +229,7 @@
 			files = (
 				63E8F33425B293DA00468177 /* LaunchScreen.storyboard in Resources */,
 				63E8F33125B293DA00468177 /* Assets.xcassets in Resources */,
+				63E8F39425B446CD00468177 /* README.md in Resources */,
 				63E8F32F25B293D800468177 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
