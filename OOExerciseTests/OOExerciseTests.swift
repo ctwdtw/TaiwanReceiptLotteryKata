@@ -30,7 +30,7 @@ class OOExerciseTests: XCTestCase {
         //
         assertThat(
             sut,
-            renderReceiptTypeText: "B2B receipt has been issued",
+            renderReceiptTypeText: "B2B receipt has been issued, taxID: \(anyTaxID())",
             lotteryNumberText: fixedLotteryNumber(),
             receiptStatusText: "choose to print out or send through email"
         )

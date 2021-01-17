@@ -28,10 +28,14 @@ extension ReceiptPresentable {
 }
 
 public struct CommonB2CReceiptViewModel: ReceiptPresentable {
-    public let receipt: Receipt
+    public var receipt: Receipt {
+        return _receipt
+    }
+    
+    private let _receipt: CommonB2CReceipt
     
     public init(receipt: CommonB2CReceipt) {
-        self.receipt = receipt
+        self._receipt = receipt
     }
 }
 
@@ -68,14 +72,18 @@ public struct CachedReceiptViewModel: ReceiptPresentable {
 }
 
 public struct B2BReceiptViewModel: ReceiptPresentable {
-    public let receipt: Receipt
+    public var receipt: Receipt {
+        return _receipt
+    }
+    
+    private let _receipt: B2BReceipt
     
     public init(receipt: B2BReceipt) {
-        self.receipt = receipt
+        self._receipt = receipt
     }
     
     public func presentReceiptType() -> String {
-        return "B2B receipt has been issued"
+        return "B2B receipt has been issued, taxID: \(_receipt.taxID)"
     }
     
     public func presentReceiptStatus() -> String {

@@ -61,7 +61,7 @@ public struct CommonB2CReceipt: Receipt {
 
 // this is b2b receipt
 public struct B2BReceipt: Receipt {
-    private let taxID: String
+    let taxID: String
     private let companyName: String
     public let commonFields: ReceiptCommonFields
     
