@@ -13,7 +13,19 @@ public protocol ReceiptPresentable {
     func presentReceiptStatus() -> String
 }
 
-extension ReceiptPresentable {
+public struct ReceiptViewModel<R: Receipt>: ReceiptPresentable {
+    public var receipt: Receipt {
+        return _receipt
+    }
+    
+    private let _receipt: R
+    
+    public init(receipt: R) {
+        self._receipt = receipt
+    }
+}
+
+extension ReceiptViewModel where R: Receipt {
     public func presentReceiptType() -> String {
         return "B2C receipt has been issued"
     }
@@ -27,61 +39,19 @@ extension ReceiptPresentable {
     }
 }
 
-public struct CommonB2CReceiptViewModel: ReceiptPresentable {
-    public var receipt: Receipt {
-        return _receipt
-    }
-    
-    private let _receipt: CommonB2CReceipt
-    
-    public init(receipt: CommonB2CReceipt) {
-        self._receipt = receipt
-    }
-}
-
-public struct NonprofitOrgReceiptViewModel: ReceiptPresentable {
-    public var receipt: Receipt {
-        return _receipt
-    }
-    
-    private let _receipt: NonprofitOrgReceipt
-    
-    public init(receipt: NonprofitOrgReceipt) {
-        self._receipt = receipt
-    }
-    
+extension ReceiptViewModel where R == NonprofitOrgReceipt {
     public func presentReceiptStatus() -> String {
         return "receipt lottery opportunity has been donated to non profile organization, org id: \(_receipt.organizationID)"
     }
 }
 
-public struct CachedReceiptViewModel: ReceiptPresentable {
-    public var receipt: Receipt {
-        return _receipt
-    }
-    
-    private let _receipt: CachedReceipt
-    
-    public init(receipt: CachedReceipt) {
-        self._receipt = receipt
-    }
-    
+extension ReceiptViewModel where R == CachedReceipt {
     public func presentReceiptStatus() -> String {
         return "receipt is saved in device with device id: \(_receipt.deviceID)"
     }
 }
 
-public struct B2BReceiptViewModel: ReceiptPresentable {
-    public var receipt: Receipt {
-        return _receipt
-    }
-    
-    private let _receipt: B2BReceipt
-    
-    public init(receipt: B2BReceipt) {
-        self._receipt = receipt
-    }
-    
+extension ReceiptViewModel where R == B2BReceipt {
     public func presentReceiptType() -> String {
         return "B2B receipt has been issued, taxID: \(_receipt.taxID)"
     }
