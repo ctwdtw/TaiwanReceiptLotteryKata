@@ -20,7 +20,7 @@ class OOExerciseTests: XCTestCase {
             companyName: anyCompanyName()
         )
         
-        let viewModel = ReceiptViewModel(receipt: b2bReceipt)
+        let viewModel = ReceiptViewModel(receipt: AnyReceipt(receipt: b2bReceipt))
         
         let sut = ReceiptViewController(viewModel: viewModel)
         
@@ -45,7 +45,7 @@ class OOExerciseTests: XCTestCase {
             deviceID: anyDeviceID()
         )
         
-        let viewModel = ReceiptViewModel(receipt: cachedReceipt)
+        let viewModel = ReceiptViewModel(receipt: AnyReceipt(receipt: cachedReceipt))
         
         let sut = ReceiptViewController(viewModel: viewModel)
         
@@ -70,7 +70,7 @@ class OOExerciseTests: XCTestCase {
             organizationID: anyNonprofitOrgID()
         )
         
-        let viewModel = ReceiptViewModel(receipt: donatedReceipt)
+        let viewModel = ReceiptViewModel(receipt: AnyReceipt(receipt: donatedReceipt))
         
         let sut = ReceiptViewController(viewModel: viewModel)
         
@@ -94,7 +94,7 @@ class OOExerciseTests: XCTestCase {
             price: 100
         )
         
-        let viewModel = ReceiptViewModel(receipt: commonB2CReceipt)
+        let viewModel = ReceiptViewModel(receipt: AnyReceipt(receipt: commonB2CReceipt))
         
         let sut = ReceiptViewController(viewModel: viewModel)
         
@@ -143,9 +143,36 @@ class OOExerciseTests: XCTestCase {
         file: StaticString = #file,
         line: UInt = #line
     ) {
-        XCTAssertEqual(sut.receiptTypeLabel.text, receiptTypeText, file: file, line: line)
-        XCTAssertEqual(sut.lotteryNumberLabel.text, lotteryNumberText, file: file, line: line)
-        XCTAssertEqual(sut.receiptStatusLabel.text, receiptStatusText, file: file, line: line)
+        
+        guard let actReceiptTypeText = sut.receiptTypeLabel.text else {
+            XCTFail("nil text on \(#selector(getter: sut.receiptTypeLabel))", file: file, line: line)
+            return
+        }
+        
+        XCTAssertEqual(actReceiptTypeText, receiptTypeText, file: file, line: line)
+        
+        guard let actLotteryNumberText = sut.lotteryNumberLabel.text else {
+            XCTFail("nil text on \(#selector(getter: sut.lotteryNumberLabel))", file: file, line: line)
+            
+            return
+        }
+        
+        
+        XCTAssertEqual(actLotteryNumberText, lotteryNumberText, file: file, line: line)
+        
+        guard let actReceiptStatusText = sut.receiptStatusLabel.text else {
+            XCTFail("nil text on \(#selector(getter: sut.receiptStatusLabel))", file: file, line: line)
+            return
+        }
+        
+        XCTAssertEqual(
+            actReceiptStatusText,
+            receiptStatusText,
+            "text mis-match",
+            file: file,
+            line: line
+        )
+        
     }
 
 }

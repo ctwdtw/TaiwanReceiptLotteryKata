@@ -9,14 +9,14 @@ import UIKit
 
 public class ReceiptViewController: UIViewController {
 
-    private var receiptViewModel: ReceiptPresentable!
-    
-    public convenience init(viewModel: ReceiptPresentable) {
+    private var receiptViewModel: ReceiptViewModel<AnyReceipt>!
+
+    public convenience init(viewModel: ReceiptViewModel<AnyReceipt>) {
         self.init()
         self.receiptViewModel = viewModel
     }
     
-    public lazy var receiptTypeLabel: UILabel = {
+    @objc public lazy var receiptTypeLabel: UILabel = {
         let label = UILabel()
         //
         // .. layout code goes here
@@ -24,7 +24,7 @@ public class ReceiptViewController: UIViewController {
         return label
     }()
     
-    public lazy var lotteryNumberLabel: UILabel = {
+    @objc public lazy var lotteryNumberLabel: UILabel = {
         let label = UILabel()
         //
         // .. layout code goes here
@@ -32,7 +32,7 @@ public class ReceiptViewController: UIViewController {
         return label
     }()
     
-    public lazy var receiptStatusLabel: UILabel = {
+    @objc public lazy var receiptStatusLabel: UILabel = {
         let label = UILabel()
         //
         // .. layout code goes here
