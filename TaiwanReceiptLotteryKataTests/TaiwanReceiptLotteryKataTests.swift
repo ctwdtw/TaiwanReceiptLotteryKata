@@ -6,9 +6,9 @@
 //
 
 import XCTest
-import OOExercise
+import TaiwanReceiptLotteryKata
 
-class OOExerciseTests: XCTestCase {
+class TaiwanReceiptLotteryKata: XCTestCase {
 
     func testRenderB2BReceipt() {
         //

@@ -13,7 +13,7 @@
 		63E8F32F25B293D800468177 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E8F32D25B293D800468177 /* Main.storyboard */; };
 		63E8F33125B293DA00468177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E8F33025B293DA00468177 /* Assets.xcassets */; };
 		63E8F33425B293DA00468177 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E8F33225B293DA00468177 /* LaunchScreen.storyboard */; };
-		63E8F33F25B293DA00468177 /* OOExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F33E25B293DA00468177 /* OOExerciseTests.swift */; };
+		63E8F33F25B293DA00468177 /* TaiwanReceiptLotteryKataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F33E25B293DA00468177 /* TaiwanReceiptLotteryKataTests.swift */; };
 		63E8F35B25B294DA00468177 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F35A25B294DA00468177 /* Models.swift */; };
 		63E8F38325B3151B00468177 /* ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F38225B3151B00468177 /* ViewModels.swift */; };
 		63E8F39425B446CD00468177 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 63E8F39325B446CD00468177 /* README.md */; };
@@ -25,19 +25,19 @@
 			containerPortal = 63E8F31C25B293D800468177 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 63E8F32325B293D800468177;
-			remoteInfo = OOExercise;
+			remoteInfo = TaiwanReceiptLotteryKata;
 		};
 		63E8F34625B293DA00468177 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 63E8F31C25B293D800468177 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 63E8F32325B293D800468177;
-			remoteInfo = OOExercise;
+			remoteInfo = TaiwanReceiptLotteryKata;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		63E8F32425B293D800468177 /* OOExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OOExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E8F32425B293D800468177 /* TaiwanReceiptLotteryKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaiwanReceiptLotteryKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E8F32725B293D800468177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63E8F32925B293D800468177 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		63E8F32B25B293D800468177 /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
@@ -45,10 +45,10 @@
 		63E8F33025B293DA00468177 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63E8F33325B293DA00468177 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		63E8F33525B293DA00468177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63E8F33A25B293DA00468177 /* OOExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OOExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		63E8F33E25B293DA00468177 /* OOExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OOExerciseTests.swift; sourceTree = "<group>"; };
+		63E8F33A25B293DA00468177 /* TaiwanReceiptLotteryKataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaiwanReceiptLotteryKataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E8F33E25B293DA00468177 /* TaiwanReceiptLotteryKataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaiwanReceiptLotteryKataTests.swift; sourceTree = "<group>"; };
 		63E8F34025B293DA00468177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63E8F34525B293DA00468177 /* OOExerciseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OOExerciseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E8F34525B293DA00468177 /* TaiwanReceiptLotteryKataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaiwanReceiptLotteryKataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E8F35A25B294DA00468177 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		63E8F38225B3151B00468177 /* ViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels.swift; sourceTree = "<group>"; };
 		63E8F39325B446CD00468177 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 		63E8F31B25B293D800468177 = {
 			isa = PBXGroup;
 			children = (
-				63E8F32625B293D800468177 /* OOExercise */,
-				63E8F33D25B293DA00468177 /* OOExerciseTests */,
+				63E8F32625B293D800468177 /* TaiwanReceiptLotteryKata */,
+				63E8F33D25B293DA00468177 /* TaiwanReceiptLotteryKataTests */,
 				63E8F32525B293D800468177 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,14 +91,14 @@
 		63E8F32525B293D800468177 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				63E8F32425B293D800468177 /* OOExercise.app */,
-				63E8F33A25B293DA00468177 /* OOExerciseTests.xctest */,
-				63E8F34525B293DA00468177 /* OOExerciseUITests.xctest */,
+				63E8F32425B293D800468177 /* TaiwanReceiptLotteryKata.app */,
+				63E8F33A25B293DA00468177 /* TaiwanReceiptLotteryKataTests.xctest */,
+				63E8F34525B293DA00468177 /* TaiwanReceiptLotteryKataUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		63E8F32625B293D800468177 /* OOExercise */ = {
+		63E8F32625B293D800468177 /* TaiwanReceiptLotteryKata */ = {
 			isa = PBXGroup;
 			children = (
 				63E8F39325B446CD00468177 /* README.md */,
@@ -112,24 +112,24 @@
 				63E8F33225B293DA00468177 /* LaunchScreen.storyboard */,
 				63E8F33525B293DA00468177 /* Info.plist */,
 			);
-			path = OOExercise;
+			path = TaiwanReceiptLotteryKata;
 			sourceTree = "<group>";
 		};
-		63E8F33D25B293DA00468177 /* OOExerciseTests */ = {
+		63E8F33D25B293DA00468177 /* TaiwanReceiptLotteryKataTests */ = {
 			isa = PBXGroup;
 			children = (
-				63E8F33E25B293DA00468177 /* OOExerciseTests.swift */,
+				63E8F33E25B293DA00468177 /* TaiwanReceiptLotteryKataTests.swift */,
 				63E8F34025B293DA00468177 /* Info.plist */,
 			);
-			path = OOExerciseTests;
+			path = TaiwanReceiptLotteryKataTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		63E8F32325B293D800468177 /* OOExercise */ = {
+		63E8F32325B293D800468177 /* TaiwanReceiptLotteryKata */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63E8F34E25B293DA00468177 /* Build configuration list for PBXNativeTarget "OOExercise" */;
+			buildConfigurationList = 63E8F34E25B293DA00468177 /* Build configuration list for PBXNativeTarget "TaiwanReceiptLotteryKata" */;
 			buildPhases = (
 				63E8F32025B293D800468177 /* Sources */,
 				63E8F32125B293D800468177 /* Frameworks */,
@@ -139,14 +139,14 @@
 			);
 			dependencies = (
 			);
-			name = OOExercise;
-			productName = OOExercise;
-			productReference = 63E8F32425B293D800468177 /* OOExercise.app */;
+			name = TaiwanReceiptLotteryKata;
+			productName = TaiwanReceiptLotteryKata;
+			productReference = 63E8F32425B293D800468177 /* TaiwanReceiptLotteryKata.app */;
 			productType = "com.apple.product-type.application";
 		};
-		63E8F33925B293DA00468177 /* OOExerciseTests */ = {
+		63E8F33925B293DA00468177 /* TaiwanReceiptLotteryKataTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63E8F35125B293DA00468177 /* Build configuration list for PBXNativeTarget "OOExerciseTests" */;
+			buildConfigurationList = 63E8F35125B293DA00468177 /* Build configuration list for PBXNativeTarget "TaiwanReceiptLotteryKataTests" */;
 			buildPhases = (
 				63E8F33625B293DA00468177 /* Sources */,
 				63E8F33725B293DA00468177 /* Frameworks */,
@@ -157,14 +157,14 @@
 			dependencies = (
 				63E8F33C25B293DA00468177 /* PBXTargetDependency */,
 			);
-			name = OOExerciseTests;
-			productName = OOExerciseTests;
-			productReference = 63E8F33A25B293DA00468177 /* OOExerciseTests.xctest */;
+			name = TaiwanReceiptLotteryKataTests;
+			productName = TaiwanReceiptLotteryKataTests;
+			productReference = 63E8F33A25B293DA00468177 /* TaiwanReceiptLotteryKataTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		63E8F34425B293DA00468177 /* OOExerciseUITests */ = {
+		63E8F34425B293DA00468177 /* TaiwanReceiptLotteryKataUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63E8F35425B293DA00468177 /* Build configuration list for PBXNativeTarget "OOExerciseUITests" */;
+			buildConfigurationList = 63E8F35425B293DA00468177 /* Build configuration list for PBXNativeTarget "TaiwanReceiptLotteryKataUITests" */;
 			buildPhases = (
 				63E8F34125B293DA00468177 /* Sources */,
 				63E8F34225B293DA00468177 /* Frameworks */,
@@ -175,9 +175,9 @@
 			dependencies = (
 				63E8F34725B293DA00468177 /* PBXTargetDependency */,
 			);
-			name = OOExerciseUITests;
-			productName = OOExerciseUITests;
-			productReference = 63E8F34525B293DA00468177 /* OOExerciseUITests.xctest */;
+			name = TaiwanReceiptLotteryKataUITests;
+			productName = TaiwanReceiptLotteryKataUITests;
+			productReference = 63E8F34525B293DA00468177 /* TaiwanReceiptLotteryKataUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -202,7 +202,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 63E8F31F25B293D800468177 /* Build configuration list for PBXProject "OOExercise" */;
+			buildConfigurationList = 63E8F31F25B293D800468177 /* Build configuration list for PBXProject "TaiwanReceiptLotteryKata" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -215,9 +215,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				63E8F32325B293D800468177 /* OOExercise */,
-				63E8F33925B293DA00468177 /* OOExerciseTests */,
-				63E8F34425B293DA00468177 /* OOExerciseUITests */,
+				63E8F32325B293D800468177 /* TaiwanReceiptLotteryKata */,
+				63E8F33925B293DA00468177 /* TaiwanReceiptLotteryKataTests */,
+				63E8F34425B293DA00468177 /* TaiwanReceiptLotteryKataUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63E8F33F25B293DA00468177 /* OOExerciseTests.swift in Sources */,
+				63E8F33F25B293DA00468177 /* TaiwanReceiptLotteryKataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,12 +283,12 @@
 /* Begin PBXTargetDependency section */
 		63E8F33C25B293DA00468177 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63E8F32325B293D800468177 /* OOExercise */;
+			target = 63E8F32325B293D800468177 /* TaiwanReceiptLotteryKata */;
 			targetProxy = 63E8F33B25B293DA00468177 /* PBXContainerItemProxy */;
 		};
 		63E8F34725B293DA00468177 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63E8F32325B293D800468177 /* OOExercise */;
+			target = 63E8F32325B293D800468177 /* TaiwanReceiptLotteryKata */;
 			targetProxy = 63E8F34625B293DA00468177 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -436,12 +436,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7S9CF6BJNF;
-				INFOPLIST_FILE = OOExercise/Info.plist;
+				INFOPLIST_FILE = TaiwanReceiptLotteryKata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.OOExercise;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.TaiwanReceiptLotteryKata;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -455,12 +455,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7S9CF6BJNF;
-				INFOPLIST_FILE = OOExercise/Info.plist;
+				INFOPLIST_FILE = TaiwanReceiptLotteryKata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.OOExercise;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.TaiwanReceiptLotteryKata;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -474,18 +474,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7S9CF6BJNF;
-				INFOPLIST_FILE = OOExerciseTests/Info.plist;
+				INFOPLIST_FILE = TaiwanReceiptLotteryKataTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.OOExerciseTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.TaiwanReceiptLotteryKataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OOExercise.app/OOExercise";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaiwanReceiptLotteryKata.app/TaiwanReceiptLotteryKata";
 			};
 			name = Debug;
 		};
@@ -496,18 +496,18 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7S9CF6BJNF;
-				INFOPLIST_FILE = OOExerciseTests/Info.plist;
+				INFOPLIST_FILE = TaiwanReceiptLotteryKataTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.OOExerciseTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.TaiwanReceiptLotteryKataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OOExercise.app/OOExercise";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TaiwanReceiptLotteryKata.app/TaiwanReceiptLotteryKata";
 			};
 			name = Release;
 		};
@@ -517,17 +517,17 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7S9CF6BJNF;
-				INFOPLIST_FILE = OOExerciseUITests/Info.plist;
+				INFOPLIST_FILE = TaiwanReceiptLotteryKataUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.OOExerciseUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.TaiwanReceiptLotteryKataUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = OOExercise;
+				TEST_TARGET_NAME = TaiwanReceiptLotteryKata;
 			};
 			name = Debug;
 		};
@@ -537,24 +537,24 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7S9CF6BJNF;
-				INFOPLIST_FILE = OOExerciseUITests/Info.plist;
+				INFOPLIST_FILE = TaiwanReceiptLotteryKataUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.OOExerciseUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.TaiwanReceiptLotteryKataUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = OOExercise;
+				TEST_TARGET_NAME = TaiwanReceiptLotteryKata;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		63E8F31F25B293D800468177 /* Build configuration list for PBXProject "OOExercise" */ = {
+		63E8F31F25B293D800468177 /* Build configuration list for PBXProject "TaiwanReceiptLotteryKata" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63E8F34C25B293DA00468177 /* Debug */,
@@ -563,7 +563,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63E8F34E25B293DA00468177 /* Build configuration list for PBXNativeTarget "OOExercise" */ = {
+		63E8F34E25B293DA00468177 /* Build configuration list for PBXNativeTarget "TaiwanReceiptLotteryKata" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63E8F34F25B293DA00468177 /* Debug */,
@@ -572,7 +572,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63E8F35125B293DA00468177 /* Build configuration list for PBXNativeTarget "OOExerciseTests" */ = {
+		63E8F35125B293DA00468177 /* Build configuration list for PBXNativeTarget "TaiwanReceiptLotteryKataTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63E8F35225B293DA00468177 /* Debug */,
@@ -581,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63E8F35425B293DA00468177 /* Build configuration list for PBXNativeTarget "OOExerciseUITests" */ = {
+		63E8F35425B293DA00468177 /* Build configuration list for PBXNativeTarget "TaiwanReceiptLotteryKataUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63E8F35525B293DA00468177 /* Debug */,

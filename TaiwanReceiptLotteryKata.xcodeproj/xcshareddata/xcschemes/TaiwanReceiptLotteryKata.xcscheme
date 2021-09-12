@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "63E8F32325B293D800468177"
-               BuildableName = "OOExercise.app"
-               BlueprintName = "OOExercise"
-               ReferencedContainer = "container:OOExercise.xcodeproj">
+               BuildableName = "TaiwanReceiptLotteryKata.app"
+               BlueprintName = "TaiwanReceiptLotteryKata"
+               ReferencedContainer = "container:TaiwanReceiptLotteryKata.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "63E8F33925B293DA00468177"
-               BuildableName = "OOExerciseTests.xctest"
-               BlueprintName = "OOExerciseTests"
-               ReferencedContainer = "container:OOExercise.xcodeproj">
+               BuildableName = "TaiwanReceiptLotteryKataTests.xctest"
+               BlueprintName = "TaiwanReceiptLotteryKataTests"
+               ReferencedContainer = "container:TaiwanReceiptLotteryKata.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "63E8F32325B293D800468177"
-            BuildableName = "OOExercise.app"
-            BlueprintName = "OOExercise"
-            ReferencedContainer = "container:OOExercise.xcodeproj">
+            BuildableName = "TaiwanReceiptLotteryKata.app"
+            BlueprintName = "TaiwanReceiptLotteryKata"
+            ReferencedContainer = "container:TaiwanReceiptLotteryKata.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "63E8F32325B293D800468177"
-            BuildableName = "OOExercise.app"
-            BlueprintName = "OOExercise"
-            ReferencedContainer = "container:OOExercise.xcodeproj">
+            BuildableName = "TaiwanReceiptLotteryKata.app"
+            BlueprintName = "TaiwanReceiptLotteryKata"
+            ReferencedContainer = "container:TaiwanReceiptLotteryKata.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
