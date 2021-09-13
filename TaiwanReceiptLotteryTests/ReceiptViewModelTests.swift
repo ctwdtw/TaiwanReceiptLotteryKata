@@ -33,7 +33,7 @@ class ReceiptViewModelTests: XCTestCase {
 
         XCTAssertEqual(sut.title, "A B2C receipt has been issued.", "title message")
         XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body message")
-        XCTAssertEqual(sut.footer, "The lottery opportunity has been donated to a non profit organization, the organization id is: 25885")
+        XCTAssertEqual(sut.footer, "The lottery opportunity has been donated to a non profit organization, the organization id is: 25885", "footer message")
     }
     
     func test_presentB2CReceiptPrinted() {
@@ -42,6 +42,6 @@ class ReceiptViewModelTests: XCTestCase {
 
         XCTAssertEqual(sut.title, "A B2C receipt has been issued.", "title message")
         XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body message")
-        XCTAssertEqual(sut.footer, "The receipt has been printed.")
+        XCTAssertEqual(sut.footer, "The receipt has been printed.", "footer message")
     }
 }
