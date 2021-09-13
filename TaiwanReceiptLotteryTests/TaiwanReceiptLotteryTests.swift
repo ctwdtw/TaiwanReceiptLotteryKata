@@ -55,6 +55,14 @@ public class DonatedReceipt: Receipt {
     }
 }
 
+public class PrintedB2CReceipt: Receipt {
+    let data: ReceiptData
+    
+    public init(date: Date, price: Int, lotteryNumber: String) {
+        self.data = ReceiptData(date: date, price: price, lotteryNumber: lotteryNumber)
+    }
+}
+
 class ReceiptViewModel<ReceiptModel: Receipt> {
     private var receipt: ReceiptModel
     
@@ -93,6 +101,12 @@ extension ReceiptViewModel where ReceiptModel == DonatedReceipt {
     }
 }
 
+extension ReceiptViewModel where ReceiptModel == PrintedB2CReceipt {
+    var footer: String {
+        return "The receipt has been printed."
+    }
+}
+
 class TaiwanReceiptLotteryTests: XCTestCase {
     func test_presentB2BReceipt() {
         let b2bReceipt = B2BReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", taxID: "45002931")
@@ -121,4 +135,12 @@ class TaiwanReceiptLotteryTests: XCTestCase {
         XCTAssertEqual(vm.footer, "The lottery opportunity has been donated to a non profit organization, the organization id is: 25885")
     }
     
+    func test_presentB2CReceiptPrinted() {
+        let printedB2CReceipt = PrintedB2CReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001")
+        let vm = ReceiptViewModel(printedB2CReceipt)
+
+        XCTAssertEqual(vm.title, "A B2C receipt has been issued.", "title message")
+        XCTAssertEqual(vm.body, "The lottery number is AA-00000001.", "body message")
+        XCTAssertEqual(vm.footer, "The receipt has been printed.")
+    }
 }
