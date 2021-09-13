@@ -44,19 +44,3 @@ public struct PrintedB2CReceipt: Receipt {
         self.data = ReceiptData(date: date, price: price, lotteryNumber: lotteryNumber)
     }
 }
-
-public protocol Receipt {
-    var data: ReceiptData { get }
-}
-
-public struct ReceiptData {
-    private var date: Date
-    private var price: Int
-    let lotteryNumber: String
-    
-    init(date: Date, price: Int, lotteryNumber: String) {
-        self.date = date
-        self.price = price
-        self.lotteryNumber = lotteryNumber
-    }
-}

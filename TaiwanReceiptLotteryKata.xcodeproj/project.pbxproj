@@ -12,6 +12,7 @@
 		63CFB27B26EFA342005C2BF5 /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CFB27A26EFA342005C2BF5 /* ReceiptViewModel.swift */; };
 		63CFB27D26EFA357005C2BF5 /* Receipts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CFB27C26EFA357005C2BF5 /* Receipts.swift */; };
 		63CFB27F26EFA85D005C2BF5 /* ReceiptViewModel+Receipts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CFB27E26EFA85D005C2BF5 /* ReceiptViewModel+Receipts.swift */; };
+		63CFB28726EFAADA005C2BF5 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CFB28626EFAADA005C2BF5 /* Receipt.swift */; };
 		63DECBD126EF3DD200802D7D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 63DECBD026EF3DD200802D7D /* README.md */; };
 		63E8F32825B293D800468177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F32725B293D800468177 /* AppDelegate.swift */; };
 		63E8F32A25B293D800468177 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F32925B293D800468177 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 		63CFB27A26EFA342005C2BF5 /* ReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
 		63CFB27C26EFA357005C2BF5 /* Receipts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipts.swift; sourceTree = "<group>"; };
 		63CFB27E26EFA85D005C2BF5 /* ReceiptViewModel+Receipts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReceiptViewModel+Receipts.swift"; sourceTree = "<group>"; };
+		63CFB28626EFAADA005C2BF5 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
 		63DECBD026EF3DD200802D7D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		63E8F32425B293D800468177 /* TaiwanReceiptLotteryKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaiwanReceiptLotteryKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E8F32725B293D800468177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		63CFB26226EF565D005C2BF5 /* TaiwanReceiptLottery */ = {
 			isa = PBXGroup;
 			children = (
+				63CFB28626EFAADA005C2BF5 /* Receipt.swift */,
 				63CFB27C26EFA357005C2BF5 /* Receipts.swift */,
 				63CFB27A26EFA342005C2BF5 /* ReceiptViewModel.swift */,
 				63CFB27E26EFA85D005C2BF5 /* ReceiptViewModel+Receipts.swift */,
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63CFB28726EFAADA005C2BF5 /* Receipt.swift in Sources */,
 				63CFB27D26EFA357005C2BF5 /* Receipts.swift in Sources */,
 				63CFB27B26EFA342005C2BF5 /* ReceiptViewModel.swift in Sources */,
 				63CFB27F26EFA85D005C2BF5 /* ReceiptViewModel+Receipts.swift in Sources */,
