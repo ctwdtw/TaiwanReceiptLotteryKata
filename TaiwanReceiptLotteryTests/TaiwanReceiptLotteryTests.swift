@@ -8,6 +8,10 @@
 import XCTest
 import TaiwanReceiptLottery
 
+protocol Receipt {
+    var data: ReceiptData { get }
+}
+
 struct ReceiptData {
     private var date: Date
     private var price: Int
@@ -21,7 +25,7 @@ struct ReceiptData {
     }
 }
 
-public class B2BReceipt {
+public class B2BReceipt: Receipt {
     let data: ReceiptData
     private(set) var taxID: String
     
@@ -31,7 +35,7 @@ public class B2BReceipt {
     }
 }
 
-public class B2CReceipt {
+public class B2CReceipt: Receipt {
     private(set) var mobileBarCode: String
     let data: ReceiptData
     
@@ -41,7 +45,7 @@ public class B2CReceipt {
     }
 }
 
-public class DonatedReceipt {
+public class DonatedReceipt: Receipt {
     private(set) var npoID: String
     let data: ReceiptData
     
@@ -51,11 +55,15 @@ public class DonatedReceipt {
     }
 }
 
-class ReceiptViewModel<ReceiptModel> {
+class ReceiptViewModel<ReceiptModel: Receipt> {
     private var receipt: ReceiptModel
     
     var title: String {
         return "A B2C receipt has been issued."
+    }
+    
+    var body: String {
+        return "The lottery number is \(receipt.data.lotteryNumber)."
     }
     
     init(_ receipt: ReceiptModel) {
@@ -68,30 +76,18 @@ extension ReceiptViewModel where ReceiptModel == B2BReceipt {
         return "A B2B receipt has been issued, the company tax id is \(receipt.taxID)."
     }
     
-    var body: String {
-        return "The lottery number is \(receipt.data.lotteryNumber)."
-    }
-    
     var footer: String {
         return "You can choose to print out this receipt or send it to your customer through email."
     }
 }
 
 extension ReceiptViewModel where ReceiptModel == B2CReceipt {
-    var body: String {
-        return "The lottery number is \(receipt.data.lotteryNumber)."
-    }
-    
     var footer: String {
         return "The receipt is saved in cloud database with mobile barcode number: \(receipt.mobileBarCode)"
     }
 }
 
 extension ReceiptViewModel where ReceiptModel == DonatedReceipt {
-    var body: String {
-        return "The lottery number is \(receipt.data.lotteryNumber)."
-    }
-    
     var footer: String {
         return "The lottery opportunity has been donated to a non profit organization, the organization id is: \(receipt.npoID)"
     }
