@@ -41,6 +41,16 @@ public class B2CReceipt {
     }
 }
 
+public class DonatedReceipt {
+    private(set) var npoID: String
+    let data: ReceiptData
+    
+    public init(date: Date, price: Int, lotteryNumber: String, npoID: String) {
+        self.data = ReceiptData(date: date, price: price, lotteryNumber: lotteryNumber)
+        self.npoID = npoID
+    }
+}
+
 class ReceiptViewModel<ReceiptModel> {
     private var receipt: ReceiptModel
     
@@ -77,6 +87,19 @@ extension ReceiptViewModel where ReceiptModel == B2BReceipt {
     }
 }
 
+extension ReceiptViewModel where ReceiptModel == DonatedReceipt {
+    var title: String {
+        return "A B2C receipt has been issued."
+    }
+    
+    var body: String {
+        return "The lottery number is \(receipt.data.lotteryNumber)."
+    }
+    
+    var footer: String {
+        return "The lottery opportunity has been donated to a non profit organization, the organization id is: \(receipt.npoID)"
+    }
+}
 
 class TaiwanReceiptLotteryTests: XCTestCase {
     func test_presentB2BReceipt() {
@@ -95,6 +118,15 @@ class TaiwanReceiptLotteryTests: XCTestCase {
         XCTAssertEqual(vm.title, "A B2C receipt has been issued.", "title message")
         XCTAssertEqual(vm.body, "The lottery number is AA-00000001.", "body message")
         XCTAssertEqual(vm.footer, "The receipt is saved in cloud database with mobile barcode number: /AB201C9", "footer message")
+    }
+    
+    func test_presentB2CReceiptWithNPOID() {
+        let donatedReceipt = DonatedReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", npoID: "25885")
+        let vm = ReceiptViewModel(donatedReceipt)
+
+        XCTAssertEqual(vm.title, "A B2C receipt has been issued.", "title message")
+        XCTAssertEqual(vm.body, "The lottery number is AA-00000001.", "body message")
+        XCTAssertEqual(vm.footer, "The lottery opportunity has been donated to a non profit organization, the organization id is: 25885")
     }
     
 }
