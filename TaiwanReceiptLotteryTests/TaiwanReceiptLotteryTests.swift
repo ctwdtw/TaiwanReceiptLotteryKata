@@ -54,22 +54,12 @@ public class DonatedReceipt {
 class ReceiptViewModel<ReceiptModel> {
     private var receipt: ReceiptModel
     
-    init(_ receipt: ReceiptModel) {
-        self.receipt = receipt
-    }
-}
-
-extension ReceiptViewModel where ReceiptModel == B2CReceipt {
     var title: String {
         return "A B2C receipt has been issued."
     }
     
-    var body: String {
-        return "The lottery number is \(receipt.data.lotteryNumber)."
-    }
-    
-    var footer: String {
-        return "The receipt is saved in cloud database with mobile barcode number: \(receipt.mobileBarCode)"
+    init(_ receipt: ReceiptModel) {
+        self.receipt = receipt
     }
 }
 
@@ -87,11 +77,17 @@ extension ReceiptViewModel where ReceiptModel == B2BReceipt {
     }
 }
 
-extension ReceiptViewModel where ReceiptModel == DonatedReceipt {
-    var title: String {
-        return "A B2C receipt has been issued."
+extension ReceiptViewModel where ReceiptModel == B2CReceipt {
+    var body: String {
+        return "The lottery number is \(receipt.data.lotteryNumber)."
     }
     
+    var footer: String {
+        return "The receipt is saved in cloud database with mobile barcode number: \(receipt.mobileBarCode)"
+    }
+}
+
+extension ReceiptViewModel where ReceiptModel == DonatedReceipt {
     var body: String {
         return "The lottery number is \(receipt.data.lotteryNumber)."
     }
