@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		63CFB26A26EF565D005C2BF5 /* TaiwanReceiptLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63CFB26126EF565D005C2BF5 /* TaiwanReceiptLottery.framework */; };
-		63CFB26F26EF565D005C2BF5 /* TaiwanReceiptLotteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CFB26E26EF565D005C2BF5 /* TaiwanReceiptLotteryTests.swift */; };
+		63CFB26F26EF565D005C2BF5 /* ReceiptViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CFB26E26EF565D005C2BF5 /* ReceiptViewModelTests.swift */; };
 		63CFB27B26EFA342005C2BF5 /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CFB27A26EFA342005C2BF5 /* ReceiptViewModel.swift */; };
 		63CFB27D26EFA357005C2BF5 /* Receipts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CFB27C26EFA357005C2BF5 /* Receipts.swift */; };
 		63CFB27F26EFA85D005C2BF5 /* ReceiptViewModel+Receipts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CFB27E26EFA85D005C2BF5 /* ReceiptViewModel+Receipts.swift */; };
@@ -44,7 +44,7 @@
 		63CFB26126EF565D005C2BF5 /* TaiwanReceiptLottery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TaiwanReceiptLottery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63CFB26426EF565D005C2BF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63CFB26926EF565D005C2BF5 /* TaiwanReceiptLotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaiwanReceiptLotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		63CFB26E26EF565D005C2BF5 /* TaiwanReceiptLotteryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaiwanReceiptLotteryTests.swift; sourceTree = "<group>"; };
+		63CFB26E26EF565D005C2BF5 /* ReceiptViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModelTests.swift; sourceTree = "<group>"; };
 		63CFB27026EF565D005C2BF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63CFB27A26EFA342005C2BF5 /* ReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
 		63CFB27C26EFA357005C2BF5 /* Receipts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipts.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		63CFB26D26EF565D005C2BF5 /* TaiwanReceiptLotteryTests */ = {
 			isa = PBXGroup;
 			children = (
-				63CFB26E26EF565D005C2BF5 /* TaiwanReceiptLotteryTests.swift */,
+				63CFB26E26EF565D005C2BF5 /* ReceiptViewModelTests.swift */,
 				63CFB27026EF565D005C2BF5 /* Info.plist */,
 			);
 			path = TaiwanReceiptLotteryTests;
@@ -345,7 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63CFB26F26EF565D005C2BF5 /* TaiwanReceiptLotteryTests.swift in Sources */,
+				63CFB26F26EF565D005C2BF5 /* ReceiptViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
