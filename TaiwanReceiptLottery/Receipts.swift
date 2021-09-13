@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class B2BReceipt: Receipt {
+public struct B2BReceipt: Receipt {
     public let data: ReceiptData
     private(set) var taxID: String
     
@@ -17,7 +17,7 @@ public class B2BReceipt: Receipt {
     }
 }
 
-public class MobileBarCodeReceipt: Receipt {
+public struct MobileBarCodeReceipt: Receipt {
     private(set) var mobileBarCode: String
     public let data: ReceiptData
     
@@ -27,7 +27,7 @@ public class MobileBarCodeReceipt: Receipt {
     }
 }
 
-public class DonatedReceipt: Receipt {
+public struct DonatedReceipt: Receipt {
     private(set) var npoID: String
     public let data: ReceiptData
     
@@ -37,7 +37,7 @@ public class DonatedReceipt: Receipt {
     }
 }
 
-public class PrintedB2CReceipt: Receipt {
+public struct PrintedB2CReceipt: Receipt {
     public let data: ReceiptData
     
     public init(date: Date, price: Int, lotteryNumber: String) {

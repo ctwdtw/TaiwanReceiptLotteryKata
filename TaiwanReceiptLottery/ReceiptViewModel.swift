@@ -6,7 +6,7 @@
 //
 
 import Foundation
-public class ReceiptViewModel<ReceiptModel: Receipt> {
+public struct ReceiptViewModel<ReceiptModel: Receipt> {
     private var receipt: ReceiptModel
     
     public var title: String {
