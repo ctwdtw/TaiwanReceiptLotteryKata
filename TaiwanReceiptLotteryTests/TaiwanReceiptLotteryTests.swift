@@ -89,11 +89,12 @@ class TaiwanReceiptLotteryTests: XCTestCase {
     }
     
     func test_presentB2CReceiptWithMobileBarCode() {
-        let b2bReceipt = B2CReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", mobileBarCode: "/AB201C9")
-        let vm = ReceiptViewModel(b2bReceipt)
+        let b2cReceipt = B2CReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", mobileBarCode: "/AB201C9")
+        let vm = ReceiptViewModel(b2cReceipt)
 
         XCTAssertEqual(vm.title, "A B2C receipt has been issued.", "title message")
         XCTAssertEqual(vm.body, "The lottery number is AA-00000001.", "body message")
         XCTAssertEqual(vm.footer, "The receipt is saved in cloud database with mobile barcode number: /AB201C9", "footer message")
     }
+    
 }
