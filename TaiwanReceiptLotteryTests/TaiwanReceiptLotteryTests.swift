@@ -8,10 +8,10 @@
 import XCTest
 import TaiwanReceiptLottery
 
-class ReceiptViewModel {
-    private var receipt: Receipt
+class B2BReceiptViewModel {
+    private var receipt: B2BReceipt
     
-    init(_ receipt: Receipt) {
+    init(_ receipt: B2BReceipt) {
         self.receipt = receipt
     }
     
@@ -20,7 +20,7 @@ class ReceiptViewModel {
     }
     
     var body: String {
-        return "The lottery number is \(receipt.lotteryNumber)."
+        return "The lottery number is \(receipt.data.lotteryNumber)."
     }
     
     var footer: String {
@@ -29,30 +29,35 @@ class ReceiptViewModel {
     
 }
 
-class Receipt {
+struct ReceiptData {
     private var date: Date
     private var price: Int
     private(set) var lotteryNumber: String
-    private(set) var taxID: String
     
-    init(date: Date, price: Int, lotteryNumber: String, taxID: String) {
+    init(date: Date, price: Int, lotteryNumber: String) {
         self.date = date
         self.price = price
         self.lotteryNumber = lotteryNumber
+        
+    }
+}
+
+public class B2BReceipt {
+    let data: ReceiptData
+    private(set) var taxID: String
+    
+    public init(date: Date, price: Int, lotteryNumber: String, taxID: String) {
+        self.data = ReceiptData(date: date, price: price, lotteryNumber: lotteryNumber)
         self.taxID = taxID
     }
 }
 
-class B2CReceipt {
-    private var date: Date
-    private var price: Int
-    private(set) var lotteryNumber: String
+public class B2CReceipt {
     private(set) var mobileBarCode: String
+    let data: ReceiptData
     
-    init(date: Date, price: Int, lotteryNumber: String, mobileBarCode: String) {
-        self.date = date
-        self.price = price
-        self.lotteryNumber = lotteryNumber
+    public init(date: Date, price: Int, lotteryNumber: String, mobileBarCode: String) {
+        self.data = ReceiptData(date: date, price: price, lotteryNumber: lotteryNumber)
         self.mobileBarCode = mobileBarCode
     }
 }
@@ -69,7 +74,7 @@ class B2CReceiptViewModel {
     }
     
     var body: String {
-        return "The lottery number is \(receipt.lotteryNumber)."
+        return "The lottery number is \(receipt.data.lotteryNumber)."
     }
     
     var footer: String {
@@ -80,8 +85,8 @@ class B2CReceiptViewModel {
 
 class TaiwanReceiptLotteryTests: XCTestCase {
     func test_presentB2BReceipt() {
-        let b2bReceipt = Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", taxID: "45002931")
-        let vm = ReceiptViewModel(b2bReceipt)
+        let b2bReceipt = B2BReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", taxID: "45002931")
+        let vm = B2BReceiptViewModel(b2bReceipt)
 
         XCTAssertEqual(vm.title, "A B2B receipt has been issued, the company tax id is 45002931.", "title message")
         XCTAssertEqual(vm.body, "The lottery number is AA-00000001.", "body message")
