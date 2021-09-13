@@ -8,27 +8,6 @@
 import XCTest
 import TaiwanReceiptLottery
 
-class B2BReceiptViewModel {
-    private var receipt: B2BReceipt
-    
-    init(_ receipt: B2BReceipt) {
-        self.receipt = receipt
-    }
-    
-    var title: String {
-        return "A B2B receipt has been issued, the company tax id is \(receipt.taxID)."
-    }
-    
-    var body: String {
-        return "The lottery number is \(receipt.data.lotteryNumber)."
-    }
-    
-    var footer: String {
-        return "You can choose to print out this receipt or send it to your customer through email."
-    }
-    
-}
-
 struct ReceiptData {
     private var date: Date
     private var price: Int
@@ -62,13 +41,15 @@ public class B2CReceipt {
     }
 }
 
-class B2CReceiptViewModel {
-    private var receipt: B2CReceipt
+class ReceiptViewModel<ReceiptModel> {
+    private var receipt: ReceiptModel
     
-    init(_ receipt: B2CReceipt) {
+    init(_ receipt: ReceiptModel) {
         self.receipt = receipt
     }
-    
+}
+
+extension ReceiptViewModel where ReceiptModel == B2CReceipt {
     var title: String {
         return "A B2C receipt has been issued."
     }
@@ -80,13 +61,27 @@ class B2CReceiptViewModel {
     var footer: String {
         return "The receipt is saved in cloud database with mobile barcode number: \(receipt.mobileBarCode)"
     }
-    
 }
+
+extension ReceiptViewModel where ReceiptModel == B2BReceipt {
+    var title: String {
+        return "A B2B receipt has been issued, the company tax id is \(receipt.taxID)."
+    }
+    
+    var body: String {
+        return "The lottery number is \(receipt.data.lotteryNumber)."
+    }
+    
+    var footer: String {
+        return "You can choose to print out this receipt or send it to your customer through email."
+    }
+}
+
 
 class TaiwanReceiptLotteryTests: XCTestCase {
     func test_presentB2BReceipt() {
         let b2bReceipt = B2BReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", taxID: "45002931")
-        let vm = B2BReceiptViewModel(b2bReceipt)
+        let vm = ReceiptViewModel(b2bReceipt)
 
         XCTAssertEqual(vm.title, "A B2B receipt has been issued, the company tax id is 45002931.", "title message")
         XCTAssertEqual(vm.body, "The lottery number is AA-00000001.", "body message")
@@ -95,7 +90,7 @@ class TaiwanReceiptLotteryTests: XCTestCase {
     
     func test_presentB2CReceiptWithMobileBarCode() {
         let b2bReceipt = B2CReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", mobileBarCode: "/AB201C9")
-        let vm = B2CReceiptViewModel(b2bReceipt)
+        let vm = ReceiptViewModel(b2bReceipt)
 
         XCTAssertEqual(vm.title, "A B2C receipt has been issued.", "title message")
         XCTAssertEqual(vm.body, "The lottery number is AA-00000001.", "body message")
