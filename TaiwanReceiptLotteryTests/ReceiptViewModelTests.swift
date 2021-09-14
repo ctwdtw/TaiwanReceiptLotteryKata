@@ -55,7 +55,7 @@ struct ReceiptViewModel {
             return "The lottery opportunity has been donated to a non profit organization, the organization id is: \(code)"
             
         } else {
-            return ""
+            return "The receipt has been printed."
             
         }
     }
@@ -84,6 +84,14 @@ class ReceiptViewModelTests: XCTestCase {
         XCTAssertEqual(sut.title, "A B2C receipt has been issued.", "title")
         XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body")
         XCTAssertEqual(sut.footer, "The lottery opportunity has been donated to a non profit organization, the organization id is: 25885", "footer")
+    }
+    
+    func test_presentPrintedB2CReceipt() {
+        let sut = ReceiptViewModel(Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001"))
+        
+        XCTAssertEqual(sut.title, "A B2C receipt has been issued.", "title")
+        XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body")
+        XCTAssertEqual(sut.footer, "The receipt has been printed.", "footer")
     }
     
 }
