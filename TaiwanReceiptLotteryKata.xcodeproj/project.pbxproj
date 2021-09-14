@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		63B0752126F0675F00F361CC /* TaiwanReceiptLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B0751826F0675F00F361CC /* TaiwanReceiptLottery.framework */; };
-		63B0752626F0675F00F361CC /* TaiwanReceiptLotteryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0752526F0675F00F361CC /* TaiwanReceiptLotteryTests.swift */; };
+		63B0752626F0675F00F361CC /* ReceiptViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0752526F0675F00F361CC /* ReceiptViewModelTests.swift */; };
 		63B0752826F0675F00F361CC /* TaiwanReceiptLottery.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B0751A26F0675F00F361CC /* TaiwanReceiptLottery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63DECBD126EF3DD200802D7D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 63DECBD026EF3DD200802D7D /* README.md */; };
 		63E8F32825B293D800468177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F32725B293D800468177 /* AppDelegate.swift */; };
@@ -42,7 +42,7 @@
 		63B0751A26F0675F00F361CC /* TaiwanReceiptLottery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaiwanReceiptLottery.h; sourceTree = "<group>"; };
 		63B0751B26F0675F00F361CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63B0752026F0675F00F361CC /* TaiwanReceiptLotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaiwanReceiptLotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		63B0752526F0675F00F361CC /* TaiwanReceiptLotteryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaiwanReceiptLotteryTests.swift; sourceTree = "<group>"; };
+		63B0752526F0675F00F361CC /* ReceiptViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModelTests.swift; sourceTree = "<group>"; };
 		63B0752726F0675F00F361CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63DECBD026EF3DD200802D7D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		63E8F32425B293D800468177 /* TaiwanReceiptLotteryKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaiwanReceiptLotteryKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +103,7 @@
 		63B0752426F0675F00F361CC /* TaiwanReceiptLotteryTests */ = {
 			isa = PBXGroup;
 			children = (
-				63B0752526F0675F00F361CC /* TaiwanReceiptLotteryTests.swift */,
+				63B0752526F0675F00F361CC /* ReceiptViewModelTests.swift */,
 				63B0752726F0675F00F361CC /* Info.plist */,
 			);
 			path = TaiwanReceiptLotteryTests;
@@ -332,7 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63B0752626F0675F00F361CC /* TaiwanReceiptLotteryTests.swift in Sources */,
+				63B0752626F0675F00F361CC /* ReceiptViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
