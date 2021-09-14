@@ -11,11 +11,11 @@ import TaiwanReceiptLottery
 class ViewModelsFactoryTests: XCTestCase {
 
     func test_makeViewModelCollection() {
-        let receipts = [
-            Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", specialField: .taxID("45002931")),
-            Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", specialField: .mobileBarCode("/AB201C9")),
-            Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", specialField: .npoCode("25885")),
-            Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", specialField: .non)
+        let receipts: [Receipt] = [
+            B2BReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", taxID: "45002931"),
+            MobileBarCodeReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", mobileBarCode: "/AB201C9"),
+            NPOCodeReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", npoCode: "25885"),
+            PrintedB2CReceipt(date: Date(), price: 100, lotteryNumber: "AA-00000001")
         ]
         
         let vms = ViewModelsFactory.makeViewModels(receipts)

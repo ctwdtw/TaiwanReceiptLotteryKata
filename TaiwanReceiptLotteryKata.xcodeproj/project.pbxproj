@@ -10,8 +10,8 @@
 		63B0752126F0675F00F361CC /* TaiwanReceiptLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B0751826F0675F00F361CC /* TaiwanReceiptLottery.framework */; };
 		63B0752626F0675F00F361CC /* ReceiptViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0752526F0675F00F361CC /* ReceiptViewModelTests.swift */; };
 		63B0752826F0675F00F361CC /* TaiwanReceiptLottery.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B0751A26F0675F00F361CC /* TaiwanReceiptLottery.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		63B0753026F081AA00F361CC /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0752F26F081AA00F361CC /* Receipt.swift */; };
-		63B0753226F081BB00F361CC /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0753126F081BB00F361CC /* ReceiptViewModel.swift */; };
+		63B0753026F081AA00F361CC /* Receipts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0752F26F081AA00F361CC /* Receipts.swift */; };
+		63B0753226F081BB00F361CC /* ReceiptViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0753126F081BB00F361CC /* ReceiptViewModels.swift */; };
 		63B0753426F0881700F361CC /* ViewModelsFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0753326F0881700F361CC /* ViewModelsFactoryTests.swift */; };
 		63B0753626F0883500F361CC /* ReceiptViewModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0753526F0883500F361CC /* ReceiptViewModelsFactory.swift */; };
 		63DECBD126EF3DD200802D7D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 63DECBD026EF3DD200802D7D /* README.md */; };
@@ -48,8 +48,8 @@
 		63B0752026F0675F00F361CC /* TaiwanReceiptLotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaiwanReceiptLotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B0752526F0675F00F361CC /* ReceiptViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModelTests.swift; sourceTree = "<group>"; };
 		63B0752726F0675F00F361CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63B0752F26F081AA00F361CC /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
-		63B0753126F081BB00F361CC /* ReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
+		63B0752F26F081AA00F361CC /* Receipts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipts.swift; sourceTree = "<group>"; };
+		63B0753126F081BB00F361CC /* ReceiptViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModels.swift; sourceTree = "<group>"; };
 		63B0753326F0881700F361CC /* ViewModelsFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsFactoryTests.swift; sourceTree = "<group>"; };
 		63B0753526F0883500F361CC /* ReceiptViewModelsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModelsFactory.swift; sourceTree = "<group>"; };
 		63DECBD026EF3DD200802D7D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				63B0751A26F0675F00F361CC /* TaiwanReceiptLottery.h */,
-				63B0752F26F081AA00F361CC /* Receipt.swift */,
-				63B0753126F081BB00F361CC /* ReceiptViewModel.swift */,
+				63B0752F26F081AA00F361CC /* Receipts.swift */,
+				63B0753126F081BB00F361CC /* ReceiptViewModels.swift */,
 				63B0753526F0883500F361CC /* ReceiptViewModelsFactory.swift */,
 				63B0751B26F0675F00F361CC /* Info.plist */,
 			);
@@ -339,8 +339,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B0753626F0883500F361CC /* ReceiptViewModelsFactory.swift in Sources */,
-				63B0753026F081AA00F361CC /* Receipt.swift in Sources */,
-				63B0753226F081BB00F361CC /* ReceiptViewModel.swift in Sources */,
+				63B0753026F081AA00F361CC /* Receipts.swift in Sources */,
+				63B0753226F081BB00F361CC /* ReceiptViewModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
