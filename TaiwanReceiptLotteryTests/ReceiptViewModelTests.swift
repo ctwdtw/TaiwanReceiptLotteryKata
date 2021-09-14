@@ -9,20 +9,23 @@ import XCTest
 import TaiwanReceiptLottery
 
 struct Receipt {
+    enum SpecialFieldBox {
+        case taxID(String)
+        case mobileBarCode(String)
+        case npoCode(String)
+        case non
+    }
+    
     let date: Date
     let price: Int
     let lotteryNumber: String
-    let taxID: String?
-    let mobileBarCode: String?
-    let npoCode: String?
+    let specialField: SpecialFieldBox
     
-    init(date: Date, price: Int, lotteryNumber: String, taxID: String? = nil, mobileBarCode: String? = nil, npoCode: String? = nil) {
+    init(date: Date, price: Int, lotteryNumber: String, specialField: SpecialFieldBox) {
         self.date = date
         self.price = price
         self.lotteryNumber = lotteryNumber
-        self.taxID = taxID
-        self.mobileBarCode = mobileBarCode
-        self.npoCode = npoCode
+        self.specialField = specialField
     }
 }
 
@@ -33,10 +36,17 @@ struct ReceiptViewModel {
     }
     
     var title: String {
-        if let taxID = receipt.taxID {
-            return "A B2B receipt has been issued, the company tax id is \(taxID)."
-            
-        } else {
+        switch receipt.specialField {
+        case .taxID(let id):
+            return "A B2B receipt has been issued, the company tax id is \(id)."
+        
+        case .mobileBarCode:
+            return "A B2C receipt has been issued."
+        
+        case .npoCode:
+            return "A B2C receipt has been issued."
+        
+        case .non:
             return "A B2C receipt has been issued."
         }
     }
@@ -46,17 +56,18 @@ struct ReceiptViewModel {
     }
     
     var footer: String {
-        if let _ = receipt.taxID {
+        switch receipt.specialField {
+        case .taxID:
             return "You can choose to print out this receipt or send it to your customer through email."
-        } else if let code = receipt.mobileBarCode {
+        
+        case .mobileBarCode(let code):
             return "The receipt is saved in cloud database with mobile barcode number: \(code)"
-            
-        } else if let code = receipt.npoCode {
+        
+        case .npoCode(let code):
             return "The lottery opportunity has been donated to a non profit organization, the organization id is: \(code)"
-            
-        } else {
+        
+        case .non:
             return "The receipt has been printed."
-            
         }
     }
 }
@@ -64,14 +75,14 @@ struct ReceiptViewModel {
 class ReceiptViewModelTests: XCTestCase {
 
     func test_presentB2BReceipt() {
-        let sut = ReceiptViewModel(Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", taxID: "45002931"))
+        let sut = ReceiptViewModel(Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", specialField: .taxID("45002931")))
         XCTAssertEqual(sut.title, "A B2B receipt has been issued, the company tax id is 45002931.", "title")
         XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body")
         XCTAssertEqual(sut.footer, "You can choose to print out this receipt or send it to your customer through email.", "footer")
     }
     
     func test_presentMobileBarCodeReceipt() {
-        let sut = ReceiptViewModel(Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", mobileBarCode: "/AB201C9"))
+        let sut = ReceiptViewModel(Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", specialField: .mobileBarCode("/AB201C9")))
         
         XCTAssertEqual(sut.title, "A B2C receipt has been issued.", "title")
         XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body")
@@ -79,7 +90,7 @@ class ReceiptViewModelTests: XCTestCase {
     }
     
     func test_presentDonatedReceipt() {
-        let sut = ReceiptViewModel(Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", npoCode: "25885"))
+        let sut = ReceiptViewModel(Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", specialField: .npoCode("25885")))
         
         XCTAssertEqual(sut.title, "A B2C receipt has been issued.", "title")
         XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body")
@@ -87,7 +98,7 @@ class ReceiptViewModelTests: XCTestCase {
     }
     
     func test_presentPrintedB2CReceipt() {
-        let sut = ReceiptViewModel(Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001"))
+        let sut = ReceiptViewModel(Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", specialField: .non))
         
         XCTAssertEqual(sut.title, "A B2C receipt has been issued.", "title")
         XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body")
