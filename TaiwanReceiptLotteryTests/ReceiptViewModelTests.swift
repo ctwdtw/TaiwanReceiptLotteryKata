@@ -14,13 +14,15 @@ struct Receipt {
     let lotteryNumber: String
     let taxID: String?
     let mobileBarCode: String?
+    let npoCode: String?
     
-    init(date: Date, price: Int, lotteryNumber: String, taxID: String? = nil, mobileBarCode: String? = nil) {
+    init(date: Date, price: Int, lotteryNumber: String, taxID: String? = nil, mobileBarCode: String? = nil, npoCode: String? = nil) {
         self.date = date
         self.price = price
         self.lotteryNumber = lotteryNumber
         self.taxID = taxID
         self.mobileBarCode = mobileBarCode
+        self.npoCode = npoCode
     }
 }
 
@@ -49,6 +51,9 @@ struct ReceiptViewModel {
         } else if let code = receipt.mobileBarCode {
             return "The receipt is saved in cloud database with mobile barcode number: \(code)"
             
+        } else if let code = receipt.npoCode {
+            return "The lottery opportunity has been donated to a non profit organization, the organization id is: \(code)"
+            
         } else {
             return ""
             
@@ -71,6 +76,14 @@ class ReceiptViewModelTests: XCTestCase {
         XCTAssertEqual(sut.title, "A B2C receipt has been issued.", "title")
         XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body")
         XCTAssertEqual(sut.footer, "The receipt is saved in cloud database with mobile barcode number: /AB201C9", "footer")
+    }
+    
+    func test_presentDonatedReceipt() {
+        let sut = ReceiptViewModel(Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", npoCode: "25885"))
+        
+        XCTAssertEqual(sut.title, "A B2C receipt has been issued.", "title")
+        XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body")
+        XCTAssertEqual(sut.footer, "The lottery opportunity has been donated to a non profit organization, the organization id is: 25885", "footer")
     }
     
 }
