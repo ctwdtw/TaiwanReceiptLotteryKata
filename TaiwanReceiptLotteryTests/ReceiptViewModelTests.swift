@@ -12,13 +12,15 @@ struct Receipt {
     let date: Date
     let price: Int
     let lotteryNumber: String
-    let taxID: String
+    let taxID: String?
+    let mobileBarCode: String?
     
-    init(date: Date, price: Int, lotteryNumber: String, taxID: String) {
+    init(date: Date, price: Int, lotteryNumber: String, taxID: String? = nil, mobileBarCode: String? = nil) {
         self.date = date
         self.price = price
         self.lotteryNumber = lotteryNumber
         self.taxID = taxID
+        self.mobileBarCode = mobileBarCode
     }
 }
 
@@ -29,7 +31,12 @@ struct ReceiptViewModel {
     }
     
     var title: String {
-        return "A B2B receipt has been issued, the company tax id is \(receipt.taxID)."
+        if let taxID = receipt.taxID {
+            return "A B2B receipt has been issued, the company tax id is \(taxID)."
+            
+        } else {
+            return "A B2C receipt has been issued."
+        }
     }
     
     var body: String {
@@ -37,7 +44,15 @@ struct ReceiptViewModel {
     }
     
     var footer: String {
-        return "You can choose to print out this receipt or send it to your customer through email."
+        if let _ = receipt.taxID {
+            return "You can choose to print out this receipt or send it to your customer through email."
+        } else if let code = receipt.mobileBarCode {
+            return "The receipt is saved in cloud database with mobile barcode number: \(code)"
+            
+        } else {
+            return ""
+            
+        }
     }
 }
 
@@ -49,4 +64,13 @@ class ReceiptViewModelTests: XCTestCase {
         XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body")
         XCTAssertEqual(sut.footer, "You can choose to print out this receipt or send it to your customer through email.", "footer")
     }
+    
+    func test_presentMobileBarCodeReceipt() {
+        let sut = ReceiptViewModel(Receipt(date: Date(), price: 100, lotteryNumber: "AA-00000001", mobileBarCode: "/AB201C9"))
+        
+        XCTAssertEqual(sut.title, "A B2C receipt has been issued.", "title")
+        XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body")
+        XCTAssertEqual(sut.footer, "The receipt is saved in cloud database with mobile barcode number: /AB201C9", "footer")
+    }
+    
 }
