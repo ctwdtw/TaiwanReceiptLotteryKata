@@ -10,6 +10,8 @@
 		63B0752126F0675F00F361CC /* TaiwanReceiptLottery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63B0751826F0675F00F361CC /* TaiwanReceiptLottery.framework */; };
 		63B0752626F0675F00F361CC /* ReceiptViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0752526F0675F00F361CC /* ReceiptViewModelTests.swift */; };
 		63B0752826F0675F00F361CC /* TaiwanReceiptLottery.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B0751A26F0675F00F361CC /* TaiwanReceiptLottery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63B0753026F081AA00F361CC /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0752F26F081AA00F361CC /* Receipt.swift */; };
+		63B0753226F081BB00F361CC /* ReceiptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B0753126F081BB00F361CC /* ReceiptViewModel.swift */; };
 		63DECBD126EF3DD200802D7D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 63DECBD026EF3DD200802D7D /* README.md */; };
 		63E8F32825B293D800468177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F32725B293D800468177 /* AppDelegate.swift */; };
 		63E8F32A25B293D800468177 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E8F32925B293D800468177 /* SceneDelegate.swift */; };
@@ -44,6 +46,8 @@
 		63B0752026F0675F00F361CC /* TaiwanReceiptLotteryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaiwanReceiptLotteryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B0752526F0675F00F361CC /* ReceiptViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModelTests.swift; sourceTree = "<group>"; };
 		63B0752726F0675F00F361CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63B0752F26F081AA00F361CC /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
+		63B0753126F081BB00F361CC /* ReceiptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewModel.swift; sourceTree = "<group>"; };
 		63DECBD026EF3DD200802D7D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		63E8F32425B293D800468177 /* TaiwanReceiptLotteryKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaiwanReceiptLotteryKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E8F32725B293D800468177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				63B0751A26F0675F00F361CC /* TaiwanReceiptLottery.h */,
+				63B0752F26F081AA00F361CC /* Receipt.swift */,
+				63B0753126F081BB00F361CC /* ReceiptViewModel.swift */,
 				63B0751B26F0675F00F361CC /* Info.plist */,
 			);
 			path = TaiwanReceiptLottery;
@@ -251,6 +257,7 @@
 				TargetAttributes = {
 					63B0751726F0675F00F361CC = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					63B0751F26F0675F00F361CC = {
 						CreatedOnToolsVersion = 12.5;
@@ -325,6 +332,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63B0753026F081AA00F361CC /* Receipt.swift in Sources */,
+				63B0753226F081BB00F361CC /* ReceiptViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +401,7 @@
 		63B0752926F0675F00F361CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -413,6 +423,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -422,6 +433,7 @@
 		63B0752A26F0675F00F361CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -452,6 +464,7 @@
 		63B0752B26F0675F00F361CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7S9CF6BJNF;
@@ -473,6 +486,7 @@
 		63B0752C26F0675F00F361CC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7S9CF6BJNF;
