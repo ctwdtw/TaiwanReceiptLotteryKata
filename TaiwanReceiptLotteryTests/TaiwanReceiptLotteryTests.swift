@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import `TaiwanReceiptLottery`
+import TaiwanReceiptLottery
 
 class TaiwanReceiptLotteryTests: XCTestCase {
 
