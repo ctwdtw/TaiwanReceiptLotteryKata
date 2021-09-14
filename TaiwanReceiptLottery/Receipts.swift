@@ -6,24 +6,17 @@
 //
 
 import Foundation
-public class Receipt {
-    let date: Date
-    let price: Int
-    let lotteryNumber: String
-    
-    init(
-        date: Date,
-        price: Int,
-        lotteryNumber: String
-    ) {
-        self.date = date
-        self.price = price
-        self.lotteryNumber = lotteryNumber
-    }
+public protocol Receipt {
+    var date: Date { get }
+    var price: Int { get }
+    var lotteryNumber: String { get }
 }
 
-public class B2BReceipt: Receipt {
+public struct B2BReceipt: Receipt {
     let taxID: String
+    public let date: Date
+    public let price: Int
+    public let lotteryNumber: String
     
     public init(
         date: Date,
@@ -32,12 +25,18 @@ public class B2BReceipt: Receipt {
         taxID: String
     ) {
         self.taxID = taxID
-        super.init(date: date, price: price, lotteryNumber: lotteryNumber)
+        self.date = date
+        self.price = price
+        self.lotteryNumber = lotteryNumber
+        
     }
 }
 
-public class MobileBarCodeReceipt: Receipt {
+public struct MobileBarCodeReceipt: Receipt {
     let mobileBarCode: String
+    public let date: Date
+    public let price: Int
+    public let lotteryNumber: String
     
     public init(
         date: Date,
@@ -46,12 +45,18 @@ public class MobileBarCodeReceipt: Receipt {
         mobileBarCode: String
     ) {
         self.mobileBarCode = mobileBarCode
-        super.init(date: date, price: price, lotteryNumber: lotteryNumber)
+        self.date = date
+        self.price = price
+        self.lotteryNumber = lotteryNumber
     }
 }
 
-public class NPOCodeReceipt: Receipt {
+public struct NPOCodeReceipt: Receipt {
     let npoCode: String
+    public let date: Date
+    public let price: Int
+    public let lotteryNumber: String
+    
     public init(
         date: Date,
         price: Int,
@@ -59,18 +64,25 @@ public class NPOCodeReceipt: Receipt {
         npoCode: String
     ) {
         self.npoCode = npoCode
-        super.init(date: date, price: price, lotteryNumber: lotteryNumber)
+        self.date = date
+        self.price = price
+        self.lotteryNumber = lotteryNumber
     }
 }
 
-public class PrintedB2CReceipt: Receipt {
-    public override init(
+public struct PrintedB2CReceipt: Receipt {
+    public let date: Date
+    public let price: Int
+    public let lotteryNumber: String
+    
+    public init(
         date: Date,
         price: Int,
         lotteryNumber: String
     ) {
-        super.init(date: date, price: price, lotteryNumber: lotteryNumber)
-        
+        self.date = date
+        self.price = price
+        self.lotteryNumber = lotteryNumber
     }
 }
 
