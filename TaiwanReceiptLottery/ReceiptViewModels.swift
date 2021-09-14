@@ -8,10 +8,14 @@
 import Foundation
 
 public protocol ReceiptViewModel {
-    var receipt: Receipt { get }
     var title: String { get }
     var body: String { get }
     var footer: String { get }
+}
+
+/// used to hide the default implementation of `ReceiptViewModel`
+private protocol ReceiptViewModelIMP {
+    var receipt: Receipt { get }
 }
 
 extension ReceiptViewModel {
@@ -20,7 +24,8 @@ extension ReceiptViewModel {
     }
     
     public var body: String {
-        "The lottery number is \(receipt.lotteryNumber)."
+        let `self` = self as! ReceiptViewModelIMP
+        return "The lottery number is \(`self`.receipt.lotteryNumber)."
     }
     
     public var footer: String {
@@ -28,8 +33,8 @@ extension ReceiptViewModel {
     }
 }
 
-public struct B2BReceiptViewModel: ReceiptViewModel {
-    public var receipt: Receipt {
+public struct B2BReceiptViewModel: ReceiptViewModel, ReceiptViewModelIMP {
+    var receipt: Receipt {
         return _receipt
     }
     
@@ -49,8 +54,8 @@ public struct B2BReceiptViewModel: ReceiptViewModel {
     
 }
 
-public struct MobileBarCodeReceiptViewModel: ReceiptViewModel {
-    public var receipt: Receipt {
+public struct MobileBarCodeReceiptViewModel: ReceiptViewModel, ReceiptViewModelIMP {
+    var receipt: Receipt {
         _receipt
     }
     
@@ -66,8 +71,8 @@ public struct MobileBarCodeReceiptViewModel: ReceiptViewModel {
     
 }
 
-public struct NPOReceiptViewModel: ReceiptViewModel {
-    public var receipt: Receipt {
+public struct NPOReceiptViewModel: ReceiptViewModel, ReceiptViewModelIMP {
+    var receipt: Receipt {
         _receipt
     }
     
@@ -83,8 +88,8 @@ public struct NPOReceiptViewModel: ReceiptViewModel {
     
 }
 
-public struct PrintedB2CReceiptViewModel: ReceiptViewModel {
-    public var receipt: Receipt {
+public struct PrintedB2CReceiptViewModel: ReceiptViewModel, ReceiptViewModelIMP {
+    var receipt: Receipt {
         _receipt
     }
     
