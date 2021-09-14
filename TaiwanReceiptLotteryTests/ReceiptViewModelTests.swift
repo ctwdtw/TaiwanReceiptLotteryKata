@@ -44,4 +44,5 @@ class ReceiptViewModelTests: XCTestCase {
         XCTAssertEqual(sut.body, "The lottery number is AA-00000001.", "body message")
         XCTAssertEqual(sut.footer, "The receipt has been printed.", "footer message")
     }
+    
 }
