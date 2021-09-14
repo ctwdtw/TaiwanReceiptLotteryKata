@@ -7,32 +7,6 @@
 
 import Foundation
 
-public protocol ReceiptViewModel {
-    var title: String { get }
-    var body: String { get }
-    var footer: String { get }
-}
-
-/// used to hide the default implementation of `ReceiptViewModel`
-private protocol ReceiptViewModelIMP {
-    var receipt: Receipt { get }
-}
-
-extension ReceiptViewModel {
-    public var title: String {
-        "A B2C receipt has been issued."
-    }
-    
-    public var body: String {
-        let `self` = self as! ReceiptViewModelIMP
-        return "The lottery number is \(`self`.receipt.lotteryNumber)."
-    }
-    
-    public var footer: String {
-        "The receipt has been printed."
-    }
-}
-
 public struct B2BReceiptViewModel: ReceiptViewModel, ReceiptViewModelIMP {
     var receipt: Receipt {
         return _receipt

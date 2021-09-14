@@ -6,12 +6,6 @@
 //
 
 import Foundation
-public protocol Receipt {
-    var date: Date { get }
-    var price: Int { get }
-    var lotteryNumber: String { get }
-}
-
 public struct B2BReceipt: Receipt {
     let taxID: String
     public let date: Date
