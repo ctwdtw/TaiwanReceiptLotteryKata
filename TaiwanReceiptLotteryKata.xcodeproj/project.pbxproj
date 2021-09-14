@@ -25,13 +25,6 @@
 			remoteGlobalIDString = 63E8F32325B293D800468177;
 			remoteInfo = TaiwanReceiptLotteryKata;
 		};
-		63E8F34625B293DA00468177 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 63E8F31C25B293D800468177 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 63E8F32325B293D800468177;
-			remoteInfo = TaiwanReceiptLotteryKata;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +40,6 @@
 		63E8F33A25B293DA00468177 /* TaiwanReceiptLotteryKataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaiwanReceiptLotteryKataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E8F33E25B293DA00468177 /* TaiwanReceiptLotteryKataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaiwanReceiptLotteryKataTests.swift; sourceTree = "<group>"; };
 		63E8F34025B293DA00468177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		63E8F34525B293DA00468177 /* TaiwanReceiptLotteryKataUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaiwanReceiptLotteryKataUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +51,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		63E8F33725B293DA00468177 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63E8F34225B293DA00468177 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,7 +75,6 @@
 			children = (
 				63E8F32425B293D800468177 /* TaiwanReceiptLotteryKata.app */,
 				63E8F33A25B293DA00468177 /* TaiwanReceiptLotteryKataTests.xctest */,
-				63E8F34525B293DA00468177 /* TaiwanReceiptLotteryKataUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,24 +140,6 @@
 			productReference = 63E8F33A25B293DA00468177 /* TaiwanReceiptLotteryKataTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		63E8F34425B293DA00468177 /* TaiwanReceiptLotteryKataUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 63E8F35425B293DA00468177 /* Build configuration list for PBXNativeTarget "TaiwanReceiptLotteryKataUITests" */;
-			buildPhases = (
-				63E8F34125B293DA00468177 /* Sources */,
-				63E8F34225B293DA00468177 /* Frameworks */,
-				63E8F34325B293DA00468177 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				63E8F34725B293DA00468177 /* PBXTargetDependency */,
-			);
-			name = TaiwanReceiptLotteryKataUITests;
-			productName = TaiwanReceiptLotteryKataUITests;
-			productReference = 63E8F34525B293DA00468177 /* TaiwanReceiptLotteryKataUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -187,10 +153,6 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					63E8F33925B293DA00468177 = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = 63E8F32325B293D800468177;
-					};
-					63E8F34425B293DA00468177 = {
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = 63E8F32325B293D800468177;
 					};
@@ -211,7 +173,6 @@
 			targets = (
 				63E8F32325B293D800468177 /* TaiwanReceiptLotteryKata */,
 				63E8F33925B293DA00468177 /* TaiwanReceiptLotteryKataTests */,
-				63E8F34425B293DA00468177 /* TaiwanReceiptLotteryKataUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -229,13 +190,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		63E8F33825B293DA00468177 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		63E8F34325B293DA00468177 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -263,13 +217,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		63E8F34125B293DA00468177 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -277,11 +224,6 @@
 			isa = PBXTargetDependency;
 			target = 63E8F32325B293D800468177 /* TaiwanReceiptLotteryKata */;
 			targetProxy = 63E8F33B25B293DA00468177 /* PBXContainerItemProxy */;
-		};
-		63E8F34725B293DA00468177 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 63E8F32325B293D800468177 /* TaiwanReceiptLotteryKata */;
-			targetProxy = 63E8F34625B293DA00468177 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -503,46 +445,6 @@
 			};
 			name = Release;
 		};
-		63E8F35525B293DA00468177 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7S9CF6BJNF;
-				INFOPLIST_FILE = TaiwanReceiptLotteryKataUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.TaiwanReceiptLotteryKataUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TaiwanReceiptLotteryKata;
-			};
-			name = Debug;
-		};
-		63E8F35625B293DA00468177 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7S9CF6BJNF;
-				INFOPLIST_FILE = TaiwanReceiptLotteryKataUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hylee.TaiwanReceiptLotteryKataUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TaiwanReceiptLotteryKata;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -569,15 +471,6 @@
 			buildConfigurations = (
 				63E8F35225B293DA00468177 /* Debug */,
 				63E8F35325B293DA00468177 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		63E8F35425B293DA00468177 /* Build configuration list for PBXNativeTarget "TaiwanReceiptLotteryKataUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				63E8F35525B293DA00468177 /* Debug */,
-				63E8F35625B293DA00468177 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
