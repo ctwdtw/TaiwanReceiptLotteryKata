@@ -36,7 +36,7 @@ To encourage consumers to ask for receipts from merchants when a transaction hap
 - Receipts can only be either a B2B, B2C with mobile barcode, B2C donated to npo, or B2C printed-out.
 
 ### Rules for displaying messages:
-- Each message has three lines. Render each line on one `UILabel` instance.
+- Each message has three parts - title, body, and footer. Each part contains one line. Render each line on one UI element instance, such as an `UILabel` instance.
 
 - When a B2B receipt is issued, display the following message with the corresponding info such as company tax id, lottery number ... etc.:
 ```
