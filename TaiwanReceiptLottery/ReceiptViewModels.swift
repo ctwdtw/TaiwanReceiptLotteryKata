@@ -7,69 +7,46 @@
 
 import Foundation
 
-public struct B2BReceiptViewModel: ReceiptViewModel, ReceiptViewModelIMP {
-    var receipt: Receipt {
-        return _receipt
+public struct AnyReceiptViewModel<Model: Receipt>: ReceiptViewModel {
+    public var title: String {
+        "A B2C receipt has been issued."
     }
     
+    public var body: String {
+        return "The lottery number is \(receipt.lotteryNumber)."
+    }
+    
+    public var footer: String {
+        "The receipt has been printed."
+    }
+    
+    private let receipt: Model
+    
+    public init(_ receipt: Model) {
+        self.receipt = receipt
+    }
+}
+
+extension AnyReceiptViewModel where Model == B2BReceipt {
     public var title: String {
-        "A B2B receipt has been issued, the company tax id is \(_receipt.taxID)."
+        "A B2B receipt has been issued, the company tax id is \(receipt.taxID)."
     }
     
     public var footer: String {
         "You can choose to print out this receipt or send it to your customer through email."
     }
-    
-    private let _receipt: B2BReceipt
-    
-    public init(_ receipt: B2BReceipt) {
-        self._receipt = receipt
-    }
-    
 }
 
-public struct MobileBarCodeReceiptViewModel: ReceiptViewModel, ReceiptViewModelIMP {
-    var receipt: Receipt {
-        _receipt
-    }
-    
+extension AnyReceiptViewModel where Model == MobileBarCodeReceipt {
     public var footer: String {
-        "The receipt is saved in cloud database with mobile barcode number: \(_receipt.mobileBarCode)"
+        "The receipt is saved in cloud database with mobile barcode number: \(receipt.mobileBarCode)"
     }
-    
-    private let _receipt: MobileBarCodeReceipt
-    
-    public init(_ receipt: MobileBarCodeReceipt) {
-        self._receipt = receipt
-    }
-    
 }
 
-public struct NPOReceiptViewModel: ReceiptViewModel, ReceiptViewModelIMP {
-    var receipt: Receipt {
-        _receipt
-    }
-    
+extension AnyReceiptViewModel where Model == NPOCodeReceipt {
     public var footer: String {
-        "The lottery opportunity has been donated to a non profit organization, the organization id is: \(_receipt.npoCode)"
+        "The lottery opportunity has been donated to a non profit organization, the organization id is: \(receipt.npoCode)"
     }
-    
-    private let _receipt: NPOCodeReceipt
-    
-    public init(_ receipt: NPOCodeReceipt) {
-        self._receipt = receipt
-    }
-    
 }
 
-public struct PrintedB2CReceiptViewModel: ReceiptViewModel, ReceiptViewModelIMP {
-    var receipt: Receipt {
-        _receipt
-    }
-    
-    private let _receipt: PrintedB2CReceipt
-    
-    public init(_ receipt: PrintedB2CReceipt) {
-        self._receipt = receipt
-    }
-}
+extension AnyReceiptViewModel where Model == PrintedB2CReceipt {}

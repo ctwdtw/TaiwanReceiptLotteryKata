@@ -11,16 +11,16 @@ public class ViewModelsFactory {
         return receipts.compactMap { receipt in
             switch receipt {
             case let b2b as B2BReceipt:
-                return B2BReceiptViewModel(b2b)
+                return AnyReceiptViewModel(b2b)
                 
             case let mobile as MobileBarCodeReceipt:
-                return MobileBarCodeReceiptViewModel(mobile)
+                return AnyReceiptViewModel(mobile)
                 
             case let npo as NPOCodeReceipt:
-                return NPOReceiptViewModel(npo)
+                return AnyReceiptViewModel(npo)
             
             case let b2c as PrintedB2CReceipt:
-                return PrintedB2CReceiptViewModel(b2c)
+                return AnyReceiptViewModel(b2c)
             
             default:
                 return nil
